@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--描述：网页标题-->
+    <title>EXAM V1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--
+    描述：style
+-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/teacher_style.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <!-- 有关 表格-->
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css">
+
+    <style>
+        #custom_content {
+            /* border: 1px solid black; */
+            width: 60%;
+            background: #FAF5F2;
+            border-left: 6px solid #FDC8C8;
+            /* border-width:10px ; */
+            padding: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+    </style>
+    <!--描述：主体部分-->
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<nav role="navigation" class="navbar navbar-static-top">
+
+</nav>
+
+<!-- 顶部导航结束 -->
+
+<!-- 侧边栏 -->
+<div id="skin-select">
+
+
+</div>
+<!-- 侧边栏结束 -->
+
+<!--  内容部分 -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+        <!-- CONTENT -->
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <i class="icon-media-record"></i> <span>后退 </span>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="devider-vertical visible-lg"></div>
+                    <div class="tittle-middle-header">
+
+                        <div class="alert">
+                            <!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+                            <span class="tittle-alert entypo-info-circled"></span>
+                            欢迎回来,&nbsp; <strong>Dave mattew!</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+        <!-- BREADCRUMB -->
+        <ul id="breadcrumb">
+            <li><span class="entypo-home"></span></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="#" title="Sample page 1">题库管理</a></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="#" title="Sample page 1">增加试题</a></li>
+
+        </ul>
+
+
+        <div class="content-wrap">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <!-- BLANK PAGE-->
+                    <!-- ！！！！！！！哈哈哈哈哈这里写内容！！！！！！！ -->
+                    <div class="nest" id="validationClose">
+                        <div class="title-alt">
+                            <a href="Tsearchtest.html"><h6>选择试题</h6></a>
+                            <a href="Taddtest.html"><h6>添加试题</h6></a>
+                            <a href="TComposeTest.html"><h6>在线组卷</h6></a>
+                        </div>
+                        <form id="ff">
+                            <div class="title-alt1">
+								所属章节: <input name="section" type="text" placeholder="所属章节" class="form-control"/> &nbsp;
+								题目类型: <input name="type" type="text" placeholder="题目类型" class="form-control"/>
+								试卷分数: <input name="score" type="text" placeholder="试卷分数" class="form-control"/>
+								难度等级: <input name="level" type="text" placeholder="难度等级" class="form-control"/>
+                              &nbsp;  <button id="search" type="button" class="btn btn-info" >搜索题目</button>
+                            </div>
+
+                        </form>
+                        <div class="body-nest" id="Footable">
+                            <table class="table-striped footable-res footable metro-blue"
+                                   data-page-size="6">
+                                <thead>
+                                <tr>
+                                    <th>试卷名称</th>
+                                    <th>题目信息</th>
+                                    <th>所属章节</th>
+                                    <th>题目类型</th>
+                                    <th>试卷分数</th>
+                                    <th>难度等级</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="t1">
+
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="8">
+                                        <div class="pagination pagination-centered"></div>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!-- END OF BLANK PAGE -->
+
+                </div>
+
+                <!-- /END OF CONTENT -->
+
+                <!-- FOOTER -->
+                <div class="footer-space"></div>
+                <div id="footer">
+
+                </div>
+                <!-- / END OF FOOTER -->
+
+            </div>
+        </div>
+        <!--  END OF PAPER WRAP -->
+
+
+    </div>
+</div>
+</body>
+<!-- MAIN EFFECT -->
+<script>
+    $(function () {
+        $("#footer").load("teacherFooter.html");
+
+        $("#skin-select").load("teacherSlideBar.html");
+        $("nav").load("teacherBar.html");
+
+    });
+    $('#search').on('click', function () {
+        $.ajax({
+            url: '/searchQuestion',
+            type: 'post',
+            data: $('#ff').serialize(),
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            success: function (apiResult) {
+                var data = apiResult.data;
+                $('#t1').html('');
+                if (apiResult.code === 1) {
+                    data.forEach(function (value) {
+                        $('#t1').append(
+                            '<tr>' +
+                            '<td>' + value.subject + '</td>' +
+                            '<td>' + value.question + '</td>' +
+                            '<td>' + value.section + '</td>' +
+                            '<td>' + '选择题' + '</td>' +
+                            '<td>' + value.score + '</td>' +
+                            '<td>' + value.level + '</td>' +
+                            '<td>' + '<button type="button" class="btn btn-info" onclick="btn_add(' + value.questionId + ',1)">添加' +
+                            '</button>' + '</td>' +
+                            '</tr>'
+                        )
+
+                    })
+                }
+                if (apiResult.code === 2) {
+                    data.forEach(function (value) {
+                        $('#t1').append(
+                            '<tr>' +
+                            '<td>' + value.subject + '</td>' +
+                            '<td>' + value.question + '</td>' +
+                            '<td>' + value.section + '</td>' +
+                            '<td>' + '填空题' + '</td>' +
+                            '<td>' + value.score + '</td>' +
+                            '<td>' + value.level + '</td>' +
+                            '<td>' + '<button type="button" class="btn btn-info" onclick="btn_add(' + value.questionId + ',1)">添加' +
+                            '</button>' + '</td>' +
+                            '</tr>'
+                        )
+
+                    })
+                }
+                if (apiResult.code === 3) {
+                    data.forEach(function (value) {
+                        $('#t1').append(
+                            '<tr>' +
+                            '<td>' + value.subject + '</td>' +
+                            '<td>' + value.question + '</td>' +
+                            '<td>' + value.section + '</td>' +
+                            '<td>' + '判断题' + '</td>' +
+                            '<td>' + value.score + '</td>' +
+                            '<td>' + value.level + '</td>' +
+                            '<td>' + '<button type="button" class="btn btn-info" onclick="btn_add(' + value.questionId + ',1)">添加' +
+                            '</button>' + '</td>' +
+                            '</tr>'
+                        )
+
+                    })
+                }
+            }
+        })
+    })
+
+    function btn_add(questionId, questionType) {
+        var examCode = sessionStorage.getItem('examCode');
+        $.ajax({
+            type: 'post',
+            url: '/examAddOne/' + questionId + '/' + questionType + '/' + examCode,
+            success: function (value) {
+                if (value.code === 200)
+                    alert("添加成功");
+                if (value.code === 404)
+                    alert("该题已经在试卷内请勿重复添加");
+                if (value.code === 500)
+                    alert("试卷已经组满请勿再次添加");
+            }
+        })
+    }
+
+    $.ajax({
+        url: '/exam_sea',
+        type: 'get',
+        success: function (apiResult) {
+
+            var p1 = apiResult.data[0];
+            var p2 = apiResult.data[1];
+            var p3 = apiResult.data[2];
+            p1.forEach(function (value) {
+
+                $('#t1').append(
+                    '<tr>' +
+                    '<td>' + value.subject + '</td>' +
+                    '<td>' + value.question + '</td>' +
+                    '<td>' + value.section + '</td>' +
+                    '<td>' + '选择题' + '</td>' +
+                    '<td>' + value.score + '</td>' +
+                    '<td>' + value.level + '</td>' +
+                    '<td>' + '<button type="button" class="btn btn-info" onclick="btn_add(' + value.questionId + ',1)">添加' +
+                    '</button>' + '</td>' +
+                    '</tr>'
+                )
+            })
+            p2.forEach(function (value) {
+                $('#t1').append(
+                    '<tr>' +
+                    '<td>' + value.subject + '</td>' +
+                    '<td>' + value.question + '</td>' +
+                    '<td>' + value.section + '</td>' +
+                    '<td>' + '判断题' + '</td>' +
+                    '<td>' + value.score + '</td>' +
+                    '<td>' + value.level + '</td>' +
+                    '<td>' + '<button type="button" class="btn btn-info" onclick="btn_add(' + value.questionId + ',3)">添加' +
+                    '</button>' + '</td>' +
+                    '</tr>'
+                )
+            })
+            p3.forEach(function (value) {
+                $('#t1').append(
+                    '<tr>' +
+                    '<td>' + value.subject + '</td>' +
+                    '<td>' + value.question + '</td>' +
+                    '<td>' + value.section + '</td>' +
+                    '<td>' + '填空题' + '</td>' +
+                    '<td>' + value.score + '</td>' +
+                    '<td>' + value.level + '</td>' +
+                    '<td>' + '<button type="button" class="btn btn-info" onclick="btn_add(' + value.questionId + ',2)">添加' +
+                    '</button>' + '</td>' +
+                    '</tr>'
+                )
+            })
+
+        }
+    })
+</script>
+<!--<script type="text/javascript" src="assets/js/preloader.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bootstrap.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/teacherapp.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/load.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/main.js"></script>-->
+
+<!--&lt;!&ndash; /MAIN EFFECT &ndash;&gt;-->
+<!--&lt;!&ndash; GAGE &ndash;&gt;-->
+<!--<script type="text/javascript" src="assets/js/toggle_close.js"></script>-->
+<!--<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>-->
+<!--&lt;!&ndash; <script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> &ndash;&gt;-->
+<!--<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>-->
+<!--<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>-->
+<!--<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>-->
+</html>

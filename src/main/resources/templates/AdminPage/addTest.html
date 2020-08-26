@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--描述：网页标题-->
+    <title>EXAM V1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--
+        描述：style
+    -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/Adminstyle.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <!-- 有关 表格-->
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <style>
+        #custom_content {
+            /* border: 1px solid black; */
+            width: 60%;
+            background: #FAF5F2;
+            border-left: 6px solid #FDC8C8;
+            /* border-width:10px ; */
+            padding: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        #custom_content1 {
+            /*border: 1px solid black; */
+            width: 100%;
+            background: #FFFFFF;
+            border-left: 6px solid #65C3DF;
+            border-width: 10px;
+            padding: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .form_center1 {
+            margin: 0 auto;
+            width: 100%;
+        }
+    </style>
+</head>
+<!--
+	描述：主体部分
+-->
+
+<body>
+<!-- 顶部导航栏 -->
+<nav role="navigation" class="navbar navbar-static-top">
+
+</nav>
+
+<!-- 顶部导航结束 -->
+
+<!-- 侧边栏 -->
+<div id="skin-select">
+
+</div>
+<!--  内容部分 -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+        <!-- CONTENT -->
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <i class="icon-media-record"></i> <span> </span>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="devider-vertical visible-lg"></div>
+                    <div class="tittle-middle-header">
+
+                        <div class="alert">
+                            <!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+                            <span class="tittle-alert entypo-info-circled"></span>
+                            欢迎回来,&nbsp; <strong>Dave mattew!</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+        <!-- BREADCRUMB -->
+        <ul id="breadcrumb">
+            <li><span class="entypo-home"></span></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="#" title="Sample page 1">题库管理</a></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="#" title="Sample page 1">增加试题</a></li>
+
+        </ul>
+
+
+        <div class="content-wrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- BLANK PAGE-->
+                    <!-- ！！！！！！！哈哈哈哈哈这里写内容！！！！！！！ -->
+                    <div class="nest" id="validationClose">
+                        <div class="title-alt">
+                            <a href="searchtest.html"><h6>选择试题</h6></a> <a href="addTest.html"><h6>添加试题</h6></a>
+                            <a href="ComposeTest.html"><h6>在线组卷</h6></a>
+                        </div>
+
+                        <p class="lead well">
+                            <span class="icon icon-tag"></span> 如果是选择题，直接按下面格式填入即可。<br/> <span
+                                class="icon icon-tag"></span>
+                            如果是填空题，在题目描述里写入题目，在A选择写入答案，（B,C,D）可以填入填空题备用答案<br/> <span
+                                class="icon icon-tag"></span>
+                            如果是判断题，在题目描述里写入题目，在A选项写入判断题的答案。（T or F）<br/>
+                        </p>
+                        <div class="body-nest" id="validation">
+                            <div class="form_center1">
+
+                                <form action="contact" id="contact-form"
+                                      class="form-horizontal">
+                                    <div class="control-group">
+                                        <td>试题类型:</td>
+                                        <td><select class="form-control" id="typeSel">
+                                            <option value="1">选择题</option>
+                                            <option value="2">填空题</option>
+                                            <option value="3">判断题</option>
+                                        </select></td> &nbsp;&nbsp;
+                                        <td>所属章节:</td>
+                                        <td><input id="section" type="text" name="zj" placeholder="请输入对应章节"
+                                                   class="form-control"/></td> &nbsp;&nbsp;
+                                        <td>难度等级:</td>
+                                        <td><select class="form-control" id="level">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select></td> &nbsp;&nbsp;
+                                        <td>正确选项:</td>
+                                        <td><select class="form-control" id="rightAnswer">
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                        </select></td>
+                                        <td>分数:</td>
+                                        <td><input id="score" type="text" name="score" placeholder="请输入分数"
+                                                   class="form-control"/></td> &nbsp;&nbsp;
+                                    </div>
+                                    <div class="control-group">
+                                        <td>
+                                            <button type="button" class="btn btn-info">题目:</button>
+                                        </td>
+                                        <td>在下面的输入框中输入题目，形如--DNS服务器和DHCP服务器的作用是()</td>
+                                    </div>
+                                    <br/>
+                                    <tr>
+											<textarea id="question" name="text" cols="40" rows="100"
+                                                      placeholder="请输入题目内容" class="form-control"
+                                                      style="width: 100%; min-height: 100px; height: 100%;"></textarea>
+                                    </tr>
+                                    <br/> <br/>
+                                    <div>
+                                        <tr>
+                                            <td>
+                                                <button type="button" class="btn btn-info">A</button>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                            </td>
+                                            <td><input id="answerA" type="text" name="A" placeholder="请输入选项A的内容"
+                                                       class="form-control" style="width: 92%"/></td>
+                                        </tr>
+                                        <br/> <br/>
+                                    </div>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-info">B</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                        <td><input id="answerB" type="text" name="B" placeholder="请输入选项B的内容"
+                                                   class="form-control" style="width: 92%"/></td>
+                                    </tr>
+                                    <br/> <br/>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-info">C</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                        <td><input id="answerC" type="text" name="C" placeholder="请输入选项C的内容"
+                                                   class="form-control" style="width: 92%"/></td>
+                                    </tr>
+                                    <br/> <br/>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-info">D</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                        <td><input id="answerD" type="text" name="D" placeholder="请输入选项D的内容"
+                                                   class="form-control" style="width: 92%"/></td>
+                                    </tr>
+                                    <br/> <br/>
+                                    <td>
+                                        <button type="button" class="btn btn-info">解析:</button>
+                                    </td>
+
+                                    <td>在下面的输入框中输入题目解析</td>
+                                    <br/> <br/>
+                                    <tr>
+											<textarea id="analysis" name="text" cols="40" rows="100"
+                                                      placeholder="请输入答案解析" class="form-control"
+                                                      style="width: 100%; min-height: 100px; height: 100%"></textarea>
+                                    </tr>
+                                    <br/> <br/>
+                                    <td colspan="1">
+                                        <input id="add_Test" type="button" name="submit" value="立即添加"
+                                               class="btn btn-info" style="margin-left:320px"/>
+                                    </td>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- END OF BLANK PAGE -->
+
+        <!-- /END OF CONTENT -->
+
+        <!-- FOOTER -->
+        <div class="footer-space"></div>
+        <div id="footer">
+
+
+        </div>
+        <!-- / END OF FOOTER -->
+
+    </div>
+</div>
+<!--  END OF PAPER WRAP -->
+
+
+<script>
+
+    $(function () {
+        $("#footer").load("adminFooter.html");
+        $("#skin-select").load("adminSlideBar.html");
+        $("nav").load("adminBar.html");
+
+    });
+    $('#add_Test').on('click', function () {
+        var formData = {
+            source: sessionStorage.getItem('source'),
+            type: $('#typeSel option:selected').val(),
+            section: $('#section').val(),
+            level: $('#level option:selected').val(),
+            rightAnswer: $('#rightAnswer option:selected').val(),
+            question: $('#question').val(),
+            score: $('#score').val(),
+            answerA: $('#answerA').val(),
+            answerB: $('#answerB').val(),
+            answerC: $('#answerC').val(),
+            answerD: $('#answerD').val(),
+            analysis: $('#analysis').val(),
+        }
+        $.ajax({
+            url: '/add_Test',
+            type: 'post',
+            data: JSON.stringify(formData),
+            dataType: 'json',
+            contentType: "application/json",
+            success: function (ApiResult) {
+                if (ApiResult.code === 200) {
+                    alert("添加成功")
+                    window.location.reload()
+                }
+            }
+        })
+    })
+</script>
+<script type="text/javascript" src="assets/js/preloader.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/Adminapp.js"></script>
+<script type="text/javascript" src="assets/js/load.js"></script>
+<script type="text/javascript" src="assets/js/Adminmain.js"></script>
+
+
+<!-- GAGE -->
+<script type="text/javascript" src="assets/js/toggle_close.js"></script>
+<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<!-- <script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> -->
+<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!--<script src="assets/js/jquery-1.11.3.min.js"></script>-->
+<script src="assets/js/stu_main.js"></script>
+<div class="container">
+    <div class="header-inner d-none d-lg-flex">
+        <div class="header-logo">
+            <a href="studentindex.html">
+                <h2>EXAM v1.0</h2>
+            </a>
+        </div>
+        <div class="header-navigation">
+            <button class="header-navigation-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="studentindex.html">我的试卷</a>
+                    </li>
+                    <li><a href="scoreTable.html">我的分数</a></li>
+                    <li><a href="portfolio.html">个人信息</a></li>
+                    <li><a id="btn_logout">退出登录</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- <div class="mobile-menu-wrapper d-block d-lg-none">
+        <div class="mobile-menu clearfix">
+            <a href="studentindex.html" class="mobile-logo">
+                <img src="assets/img/logo/logo-dark.png" alt="mobile logo">
+            </a>
+        </div>
+    </div> -->
+</div>
+
+<script>
+    $('#btn_logout').on('click', function () {
+        $.ajax({
+            url: '/admin_logout',
+            type: 'post',
+            success: function (data) {
+                if (data.code === 200)
+                    window.location.href = '/logout.html';
+            }
+
+        })
+    })
+</script>

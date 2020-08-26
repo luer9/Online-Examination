@@ -1,0 +1,514 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<!--描述：网页标题-->
+		<title>EXAM V1.0</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!--
+		描述：style
+	-->
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<link rel="stylesheet" href="../css/teacher_style.css">
+		<link rel="stylesheet" href="../css/loader-style.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../js/button/ladda/ladda.min.css">
+		<link rel="stylesheet" href="../css/profile.css">
+		<!-- 网站图标 -->
+		<link rel="shortcut icon" href="../ico/minus.png">
+		<!-- 有关 表格-->
+		<link href="../js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+		<link href="../js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+		<link href="../js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+		
+		<link rel="stylesheet" href="../js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+		<link rel="stylesheet" href="../js/dataTable/css/datatables.responsive.css">
+		
+		<style>
+			#custom_content{
+				/* border: 1px solid black; */
+				width: 60%;
+				background: #FAF5F2;
+				border-left: 6px solid #FDC8C8;
+				/* border-width:10px ; */
+				padding: 20px;
+				font-size: 16px;
+				letter-spacing: 2px;
+			}
+		</style>
+	<!--描述：主体部分-->
+</head>
+<body>
+		<!-- 顶部导航栏 -->
+		<nav role="navigation" class="navbar navbar-static-top">
+			<!--
+	    	描述：顶部部分
+	    -->
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+	                <span class="entypo-menu"></span>
+	            </button>
+					<button class="navbar-toggle toggle-menu-mobile toggle-left" type="button">
+	                <span class="entypo-list-add"></span>
+	            </button>
+					<!--
+	            	描述：顶部左侧：左上角Logo
+	            -->
+					<div id="logo-mobile" class="visible-xs">
+						<!--
+	                	描述：系统名称
+	                -->
+						<h1>EXAM<span>v1.0</span></h1>
+					</div>
+	
+				</div>
+				<!--
+	       	描述：顶部中间部分
+	       -->
+				<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+					<!--
+	       
+	            	描述：Help导航
+	            -->
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+						</li>
+						<li>
+						</li>
+						<li>
+							<a href="#"><i data-toggle="tooltip" data-placement="bottom" title="Help" style="font-size:20px;" class="icon-help tooltitle"></i></a>
+						</li>
+					</ul>
+					<!--
+	            	描述：日期
+	            -->
+					<div id="nt-title-container" class="navbar-left running-text visible-lg">
+						<ul class="date-top">
+							<li class="entypo-calendar" style="margin-right:5px"></li>
+							<li id="Date"></li>
+						</ul>
+	
+						<ul id="digital-clock" class="digital">
+							<li class="entypo-clock" style="margin-right:5px"></li>
+							<li class="hour"></li>
+							<li>:</li>
+							<li class="min"></li>
+							<li>:</li>
+							<li class="sec"></li>
+							<li class="meridiem"></li>
+						</ul>
+						<!--
+	               	
+	               	描述：顶部字幕
+	               -->
+						<ul id="nt-title">
+							<li>
+								<strong class="icon-heart">&#160;&#160;永远相信美好的事物终会到达</strong>
+							</li>
+							<li>
+								<strong class="icon-heart">&#160;&#160;未来已来，始于现在！</strong>
+							</li>
+							<li>
+								<strong class="icon-heart">&#160;&#160;你现在后悔的一切，都是当初放弃的。</strong>
+							</li>
+							<li>
+								<strong class="icon-heart">&#160;&#160;不思量，自难忘</strong>
+							</li>
+							<li>
+								<strong class="icon-heart">&#160;&#160;懒惰受到的惩罚不仅仅是自己的失败，还有别人的成功。</strong>
+							</li>
+							<li>
+								<strong class="icon-heart">&#160;&#160;乾坤未定，你我皆是黑马。</strong>
+							</li>
+							<li>
+								<strong class="icon-heart">&#160;&#160;Stay Hungry,Stay Foolish.</strong>
+							</li>
+						</ul>
+					</div>
+	
+					<ul style="margin-right:0;" class="nav navbar-nav navbar-right">
+						<li>
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<img alt="" class="admin-pic img-circle" src="../img/az.jpg">Hi, Dave Mattew <b class="caret"></b>
+							</a>
+							<ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
+							
+								<li>
+									<a href="TeachItem.html">
+										<span class="entypo-vcard"></span>&#160;&#160;帐户设置</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="../index.html">
+										<span class="entypo-logout"></span>&#160;&#160;退出登录</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="icon-gear"></span>&#160;&#160;设置</a>
+							<ul role="menu" class="dropdown-setting dropdown-menu">
+	
+								<li class="theme-bg">
+									<div id="button-bg"></div>
+									<div id="button-bg2"></div>
+									<div id="button-bg3"></div>
+									<div id="button-bg5"></div>
+									<div id="button-bg6"></div>
+									<div id="button-bg7"></div>
+									<div id="button-bg8"></div>
+									<div id="button-bg9"></div>
+									<div id="button-bg10"></div>
+									<div id="button-bg11"></div>
+									<div id="button-bg12"></div>
+									<div id="button-bg13"></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+	
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	
+		<!-- 顶部导航结束 -->
+	
+		<!-- 侧边栏 -->
+		<div id="skin-select">
+			
+			<div id="logo">
+				<h1>EXAM
+	            <span>v1.0</span>
+	        </h1>
+			</div>
+	
+			<a id="toggle">
+				<span class="entypo-menu"></span>
+			</a>
+			<div class="dark">
+	
+			</div>
+			<div class="skin-part">
+				<div id="tree-wrap">
+					<div class="side-bar">
+						<ul class="topnav menu-left-nest">
+							<li>
+								<a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+									<span class="design-kit"></span>
+								</a>
+							</li>
+	
+							<li>
+								<a class="tooltip-tip " href="#" title="login">
+									<i class="icon-tag"></i>
+									<span>考试管理</span>
+								</a>
+								<ul>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="ItemIntro.html" title="Blank Page"><i class="icon-media-record"></i><span>功能介绍</span></a>
+									</li>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="ExamSearch.html" title="Profile Page"><i class="icon-media-record"></i><span>考试查询</span></a>
+									</li>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="AddItem.html" title="Invoice"><i class="entypo-newspaper"></i><span>添加考试</span></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="tooltip-tip " href="#" title="login">
+									<i class="icon-tag"></i>
+									<span>题库管理</span>
+								</a>
+								<ul>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="ExamIntro.html" title="Blank Page"><i class="icon-media-record"></i><span>功能介绍</span></a>
+									</li>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="ExamAdmin.html" title="Profile Page"><i class="entypo-newspaper"></i><span>所有题库</span></a>
+									</li>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="AddExam.html" title="Invoice"><i class="entypo-newspaper"></i><span>添加题库</span></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="tooltip-tip " href="#" title="login">
+									<i class="icon-tag"></i>
+									<span>成绩查询</span>
+								</a>
+								<ul>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="StuGradeSearch.html" title="Blank Page"><i class="icon-media-record"></i><span>学生成绩查询</span></a>
+									</li>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="StuFenGradeSearch.html" title="Profile Page"><i class="icon-user"></i><span>成绩分段查询</span></a>
+									</li>
+								</ul>
+							</li>
+							<!-- 	<li>
+								<a class="tooltip-tip " href="#" title="login">
+									<i class="icon-tag"></i>
+									<span>学生管理</span>
+								</a>
+	
+								<ul>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="StuAdmin.html" title="Blank Page"><i class="icon-media-record"></i><span>学生管理</span></a>
+									</li>
+									<li>
+										<a class="tooltip-tip2 ajax-load" href="AddStu.html" title="Profile Page"><i class="icon-user"></i><span>添加学生</span></a>
+									</li>
+	
+								</ul>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 侧边栏结束 -->
+	
+	<!--  内容部分 -->
+	<div class="wrap-fluid">
+		<div class="container-fluid paper-wrap bevel tlbr">
+			<div class="row">
+				<div id="paper-top">
+					<div class="col-sm-3">
+						<h2 class="tittle-content-header">
+							<a href="TeacherIndex.html"><i class="icon-media-record"></i> </a>
+						</h2>
+
+					</div>
+
+					<div class="col-sm-7">
+						<div class="devider-vertical visible-lg"></div>
+						<div class="tittle-middle-header">
+
+							<div class="alert">
+								<!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+								<span class="tittle-alert entypo-info-circled"></span>
+								欢迎回来,&nbsp; <strong>Dave mattew!</strong>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+			<!--/ TITLE -->
+
+			<!-- BREADCRUMB -->
+			<ul id="breadcrumb">
+				<li><span class="entypo-home"></span></li>
+				<li><i class="fa fa-lg fa-angle-right"></i></li>
+				<li><a href="#" title="学生成绩">学生成绩</a></li>
+				<li><i class="fa fa-lg fa-angle-right"></i></li>
+				<li><a href="StuGradeSearch.html" title="学生成绩查询">学生成绩查询</a></li>
+			</ul>
+			<div class="content-wrap">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="nest" id="FootableClose">
+							<div class="title-alt">
+								<h6>学生成绩查询</h6>
+							</div>
+							<div class="title-alt1">
+								姓名: <input type="text" placeholder="姓名" class="form-control" />
+								&nbsp; 学号: <input type="text" placeholder="学号"
+									class="form-control" /> &nbsp; 科目: <input type="text"
+									placeholder="科目" class="form-control" /> &nbsp; &nbsp; &nbsp;
+								<a href="#"><button type="button" class="btn btn-info">查看成绩</button></a>
+							</div>
+							<div class="body-nest" id="Footable">
+
+								<!-- <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller devices look awesome - No matter how many columns of data you may have in them. And it's responsive i think this better than DataTable in some way</p> -->
+
+								<table class="table-striped footable-res footable metro-blue"
+									data-page-size="6">
+									<thead>
+										<tr>
+											<th>学号</th>
+											<th>姓名</th>
+											<th>学院</th>
+											<th>专业</th>
+											<th>年级</th>
+											<th>班级</th>
+											<th>性别</th>
+											<th>科目</th>
+											<th>成绩</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>C++</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>杨杨洋</td>
+											<td>软件学院</td>
+											<td>软件工程</td>
+											<td>2017</td>
+											<td>2</td>
+											<td>女</td>
+											<td>java</td>
+											<td>100</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="8">
+												<div class="pagination pagination-centered"></div>
+											</td>
+										</tr>
+									</tfoot>
+								</table>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!-- END OF BLANK PAGE -->
+
+	</div>
+
+	<!-- /END OF CONTENT -->
+
+	<!-- FOOTER -->
+	<div class="footer-space"></div>
+	<div id="footer">
+		<div class="devider-footer-left"></div>
+		<div class="time">
+			<p id="spanDate">
+			<p id="clock">
+		</div>
+		<div class="copyright">
+			Make with Love <span class="entypo-heart"></span>Collect from Luer
+			All Rights Reserved.
+		</div>
+		<div class="devider-footer"></div>
+
+	</div>
+	<!-- / END OF FOOTER -->
+	<!--  END OF PAPER WRAP -->
+</body>
+<script type="text/javascript">
+    $(function() {
+        $('.footable-res').footable();
+    });
+    </script>
+	<!-- MAIN EFFECT -->
+				<script type="text/javascript" src="../js/preloader.js"></script>
+				<script type="text/javascript" src="../js/bootstrap.js"></script>
+				<script type="text/javascript" src="../js/teacherapp.js"></script>
+				<script type="text/javascript" src="../js/load.js"></script>
+				<script type="text/javascript" src="../js/main.js"></script>
+				
+				  <!-- /MAIN EFFECT -->
+				<!-- GAGE -->
+				<script type="text/javascript" src="../js/toggle_close.js"></script>
+				<script src="../js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+				<!-- <script src="../js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> -->
+				<script src="../js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+				<script src="../js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+				<script src="../js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Exam</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/img/icon.png">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
+
+    <!-- Style Css -->
+    <link rel="stylesheet" href="assets/css/Stu_style.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- 	<style>
+            .header .container{
+                height: 80px;
+            }
+            .breadcrumb-area .container{
+                height: 2px;
+            }
+            .cr-breadcrumb{
+                padding-top:40px;
+            }
+        </style>-->
+    <style>
+
+    </style>
+</head>
+
+<body>
+<!-- 	[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif] -->
+<!-- Add your site or application content here -->
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+
+    <!-- 头 -->
+    <header class="header sticky-header">
+
+    </header>
+    <!--// 头部结束 -->
+
+    <!-- Breadcrumb Area -->
+    <div class="breadcrumb-area bg-grey">
+        <div class="container">
+            <div class="cr-breadcrumb">
+                <!-- <h2>EXAM</h2> -->
+                <ul>
+                    <li><a href="studentindex.html">Main</a></li>
+                    <li>我的试卷</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--// Breadcrumb Area -->
+
+    <!-- Page Conttent -->
+    <main class="page-content">
+
+        <!-- Blog Area -->
+        <div class="cr-section blog-area section-padding-lg">
+            <div class="container">
+                <div class="row justify-content-center" id="examManage">
+                    <!-- Single Blog -->
+
+                    <!--// Single Blog -->
+
+                </div>
+                <div class="cr-pagination mt-4 text-center">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Blog Area -->
+
+    </main>
+    <!--// Page Conttent -->
+
+    <!-- Footer Area -->
+    <footer class="footer-area bg-white">
+
+    </footer>
+    <!--// Footer Area -->
+
+</div>
+<!--// Wrapper -->
+
+<!-- Js Files -->
+<script src="assets/js/modernizr-3.6.0.min.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/stu_main.js"></script>
+</body>
+<script>
+    $(function () {
+        $("header").load("stuNav.html");
+        $("footer").load("stuFooter.html");
+    });
+    // $('#paper').on('click', function () {
+    // 	document
+    // 	sessionStorage.setItem("examCode",);
+    // })
+    function paper(id) {
+        sessionStorage.setItem("examCode", id);
+        window.location.href = 'ExamMsg.html'
+    }
+
+    $.ajax({
+        url: '/paperSearch',
+        type: 'get',
+        success: function (apiResult) {
+            var i = 9
+            apiResult.data.forEach(function (value) {
+                i++
+                if (i === 12) {
+                    i++
+                } else if (i === 18) {
+                    i = 9
+                }
+                $('#examManage').append(
+                    '<div class="col-xl-4 col-lg-6 col-md-6 col-12">' +
+                    '<article class="blog-item sticky">' +
+                    '<header class="blog-item-header">' +
+                    '<button style="border:none;" onclick="paper(' + value.examCode + ')">' +
+                    '<img src="assets/img/blog/blog-image-' + i + '.jpg" alt="blog thumb">' +
+                    '</button>' +
+                    '</header>' +
+                    '<div class="blog-item-body">' +
+                    '<h3 class="blog-item-title"><button style="border:none;" onclick="paper(' + value.examCode + ')">' + value.source + '</button></h3>' +
+                    '<p>' + value.source + '-' + value.description + '</p>' +
+                    '</div>' +
+                    '<footer class="blog-item-footer">' +
+                    '<ul class="blog-item-meta">' +
+                    '<li><i class="fa fa-user-o"></i>By <a href="#">' + value.papermaker + '</a></li>' +
+                    '<li><i class="fa fa-calendar-o"></i>' + value.examDate + '</li>' +
+                    '<li><i class="fa fa-heart-o"></i>限时' + value.totalTime + '分钟</li>' +
+                    '</ul>' +
+                    '</footer>' +
+                    '</article>' +
+                    '</div>'
+                )
+                // sessionStorage.setItem("examCode", value.examCode);
+            })
+        }
+    })
+</script>
+</html>

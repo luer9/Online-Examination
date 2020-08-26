@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--描述：网页标题-->
+    <title>EXAM V1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--
+    描述：style
+-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/Adminstyle.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <!-- 有关 表格-->
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <style>
+        .modal-body {
+
+            max-height: 600px;
+
+            overflow-y: auto;
+
+        }
+
+        #custom_content {
+            /* border: 1px solid black; */
+            width: 60%;
+            background: #FAF5F2;
+            border-left: 6px solid #FDC8C8;
+            /* border-width:10px ; */
+            padding: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<nav role="navigation" class="navbar navbar-static-top">
+
+</nav>
+
+<!-- 顶部导航结束 -->
+
+<!-- 侧边栏 -->
+<div id="skin-select">
+
+</div>
+<!--  内容部分 -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+        <!-- CONTENT -->
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <a href="AdminIndex.html"><i class="icon-media-record"></i> </a>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="devider-vertical visible-lg"></div>
+                    <div class="tittle-middle-header">
+
+                        <div class="alert">
+                            <!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+                            <span class="tittle-alert entypo-info-circled"></span>
+                            欢迎回来,&nbsp; <strong>Dave mattew!</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+        <!-- BREADCRUMB -->
+        <ul id="breadcrumb">
+            <li><span class="entypo-home"></span></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="#" title="题库管理">题库管理</a></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="StuGradeSearch.html" title="所有题库">增加题库</a></li>
+        </ul>
+
+
+        <div class="content-wrap">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <!-- 内容写这里……-->
+
+                    <div class="content-wrap">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="nest" id="FootableClose">
+                                    <div class="title-alt">
+                                        <h6>增加题库</h6>
+                                    </div>
+
+                                    <div class="title-alt1">
+                                        试卷ID: <input type="text" placeholder="ID" name="tid" class="form-control"/>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-info" id="find_exam">查询</button>
+                                    </div>
+
+                                    <div class="body-nest" id="Footable">
+
+                                        <!-- <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller devices look awesome - No matter how many columns of data you may have in them. And it's responsive i think this better than DataTable in some way</p> -->
+
+                                        <table class="table-striped footable-res footable metro-blue"
+                                               data-page-size="6">
+                                            <thead>
+                                            <tr>
+                                                <th>试卷ID</th>
+                                                <th>试卷名称</th>
+                                                <th>试卷介绍</th>
+                                                <th>所属学院</th>
+
+                                                <th>所属专业</th>
+                                                <th>年级</th>
+                                                <th>考试日期</th>
+                                                <th>时长</th>
+                                                <th>总分</th>
+                                                <th>试卷类型</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tbody">
+
+
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colspan="11">
+                                                    <div class="pagination pagination-centered"></div>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END OF BLANK PAGE -->
+
+            </div>
+
+            <!-- /END OF CONTENT -->
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">查看试题</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!--中间内容部分-->
+                            <div action="contact" id="showExam" class="form-horizontal">
+                                <fieldset>
+                                    <table class="table-striped footable-res footable metro-blue" data-page-size="6">
+                                        <thead>
+                                        <tr>
+
+                                            <th>
+                                                题目信息
+                                            </th>
+                                            <th>
+                                                题目类型
+                                            </th>
+                                            <th>
+                                                试卷分数
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tbody1"></tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td colspan="11">
+                                                <div class="pagination pagination-centered"></div>
+                                            </td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                </fieldset>
+                            </div>
+                            <!--中间部分结束-->
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- model弹出框结束-->
+
+
+            <!-- model删除框st-->
+            <!-- 信息删除确认 -->
+            <div class="modal fade" id="delcfmModel">
+                <div class="modal-dialog">
+                    <div class="modal-content message_align">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title">提示信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>您确认要删除吗？</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" id="url"/>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <a id="btn_delexam" class="btn btn-success"
+                               data-dismiss="modal">确定</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- model删除 end-->
+
+            <!-- FOOTER -->
+            <div class="footer-space"></div>
+            <div id="footer">
+
+            </div>
+            <!-- / END OF FOOTER -->
+
+        </div>
+    </div>
+    <!--  END OF PAPER WRAP -->
+
+
+</div>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        $("#footer").load("adminFooter.html");
+
+        $("#skin-select").load("adminSlideBar.html");
+        $("nav").load("adminBar.html");
+
+    });
+
+    $(function () {
+
+        $('.footable-res').footable();
+    });
+
+    <!-- MAIN EFFECT -->
+    $('#find_exam').on('click', function () {
+        var id = $('input[name=tid]').val();
+        console.log("id: " + id);
+        $.ajax({
+            url: '/searchExam/' + id,
+            type: 'get',
+            success: function (apiResult) {
+                var examPapers = apiResult.data
+                $('#tbody').html('')
+                $('#tbody').append(
+                    '<tr>' +
+                    '<td>' + examPapers.examCode + '</td>' +
+                    '<td>' + examPapers.source + '</td>' +
+                    '<td>' + examPapers.description + '</td>' +
+                    '<td>' + examPapers.institute + '</td>' +
+                    '<td>' + examPapers.major + '</td>' +
+                    '<td>' + examPapers.grade + '</td>' +
+                    '<td>' + examPapers.examDate + '</td>' +
+                    '<td>' + examPapers.totalTime + '</td>' +
+                    '<td>' + examPapers.totalScore + '</td>' +
+                    '<td>' + examPapers.type + '</td>' +
+                    '<td data-value="1"><a href="#"> ' +
+                    '<button class="ladda-button" data-color="blue" ' +
+                    'data-style="slide-up" data-size="xs"' +
+                    'onclick="btn_show(' + examPapers.examCode + ')"> ' +
+                    '<span class="ladda-label">查看试卷</span><span ' +
+                    'class="ladda-spinner"></span> ' +
+                    '</button>' +
+                    '&nbsp;&nbsp;' +
+                    '<button class="ladda-button" data-color="blue" ' +
+                    'data-style="zoom-in" data-size="xs" onclick="tips()"> ' +
+                    '<span class="ladda-label">添加题目</span> ' +
+                    '</button>' +
+                    '&nbsp;&nbsp;' +
+                    '<button class="ladda-button" data-color="red" ' +
+                    'data-style="zoom-in" data-size="xs" onclick="btn_delexam(' + examPapers.examCode + ' ) "> ' +
+                    '<span class="ladda-label">删除试卷</span> ' +
+                    '</button>' +
+                    '</a></td>' +
+                    '</tr>'
+                )
+            }
+        })
+    })
+
+    function btn_delexam(id) {
+        $("#delcfmModel").modal();
+        $('#btn_delexam').on('click', function () {
+            $.ajax({
+                type: 'get',
+                url: '/delExam/' + id,
+                success: function (data) {
+                    if (data.code == 200) {
+                        window.location.reload()
+                    } else alert('删除失败')
+
+                }
+            })
+        })
+    }
+
+    function btn_show(id) {
+        $('#tbody1').html('')
+        $("#myModalLabel").text("题目信息");
+        $("#myModal").modal();
+        $.ajax({
+                url: '/showFillQues/' + id,
+                type: 'get',
+                success: function (apiResult) {
+                    apiResult.data.forEach(function (FillQues) {
+                        // $('#tbody1').html('')
+                        $('#tbody1').append(
+                            '<tr>' +
+                            '<td>' + FillQues.question + '</td>' +
+                            '<td>' + '填空题' + '</td>' +
+                            '<td>' + FillQues.score + '</td>' +
+                            '</tr>'
+                        )
+                    })
+                }
+            }
+        );
+        //2
+        $.ajax({
+                url: '/showJudgeQues/' + id,
+                type: 'get',
+                success: function (apiResult) {
+                    apiResult.data.forEach(function (JudgeQues) {
+                        // $('#tbody1').html('')
+                        $('#tbody1').append(
+                            '<tr>' +
+                            '<td>' + JudgeQues.question + '</td>' +
+                            '<td>' + '判断题' + '</td>' +
+                            '<td>' + JudgeQues.score + '</td>' +
+                            '</tr>'
+                        )
+                    })
+                }
+            }
+        );
+        //3
+        $.ajax({
+            url: '/showMultiQues/' + id,
+            type: 'get',
+            success: function (apiResult) {
+                apiResult.data.forEach(function (MultiQues) {
+                    // $('#tbody1').html('')
+                    $('#tbody1').append(
+                        '<tr>' +
+                        '<td>' + MultiQues.question + '</td>' +
+                        '<td>' + '选择题' + '</td>' +
+                        '<td>' + MultiQues.score + '</td>' +
+                        '</tr>'
+                    )
+                })
+            }
+        });
+    }
+
+    $.ajax({
+        url: '/exam_search',
+        type: 'get',
+        success: function (apiResult) {
+            apiResult.data.forEach(function (examPapers) {
+                $('#tbody').append(
+                    '<tr>' +
+                    '<td>' + examPapers.examCode + '</td>' +
+                    '<td>' + examPapers.source + '</td>' +
+                    '<td>' + examPapers.description + '</td>' +
+                    '<td>' + examPapers.institute + '</td>' +
+                    '<td>' + examPapers.major + '</td>' +
+                    '<td>' + examPapers.grade + '</td>' +
+                    '<td>' + examPapers.examDate + '</td>' +
+                    '<td>' + examPapers.totalTime + '</td>' +
+                    '<td>' + examPapers.totalScore + '</td>' +
+                    '<td>' + examPapers.type + '</td>' +
+                    '<td data-value="1"><a href="#"> ' +
+                    '<button class="ladda-button" data-color="blue" ' +
+                    'data-style="slide-up" data-size="xs"' +
+                    'onclick="btn_show(' + examPapers.examCode + ')"> ' +
+                    '<span class="ladda-label">查看试卷</span><span ' +
+                    'class="ladda-spinner"></span> ' +
+                    '</button>' +
+                    '&nbsp;&nbsp;' +
+                    '<button class="ladda-button" data-color="blue" ' +
+                    'data-style="zoom-in" data-size="xs" onclick="tips(\'' + examPapers.source + '\')"> ' +
+                    '<span class="ladda-label">添加题目</span> ' +
+                    '</button>' +
+                    '&nbsp;&nbsp;' +
+                    '<button class="ladda-button" data-color="red" ' +
+                    'data-style="zoom-in" data-size="xs" onclick="btn_delexam(' + examPapers.examCode + ' ) "> ' +
+                    '<span class="ladda-label">删除试卷</span> ' +
+                    '</button>' +
+                    '</a></td>' +
+                    '</tr>'
+
+                    // <a href="Taddtest.html">-->
+                    // <button class="ladda-button" data-color="blue" data-style="slide-up" data-size="xs">-->
+                    // 	<span class="ladda-label">增加题目</span>-->
+                    // </button>
+                    // </a>
+                )
+            })
+        }
+    });
+
+    function tips(source) {
+        sessionStorage.setItem('source', source)
+        window.location.href = '/addTest.html'
+    }
+</script>
+
+<script type="text/javascript" src="assets/js/preloader.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/Adminapp.js"></script>
+<script type="text/javascript" src="assets/js/load.js"></script>
+<script type="text/javascript" src="assets/js/Adminmain.js"></script>
+
+
+<!-- GAGE -->
+<script type="text/javascript" src="assets/js/toggle_close.js"></script>
+<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<!-- <script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> -->
+<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+
+</html>

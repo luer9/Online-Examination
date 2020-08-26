@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!--描述：网页标题-->
+    <title>EXAM V1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--
+    描述：style
+-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/Adminstyle.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <!-- 有关 表格-->
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <style>
+        #custom_content {
+            /* border: 1px solid black; */
+            width: 60%;
+            background: #FAF5F2;
+            border-left: 6px solid #FDC8C8;
+            /* border-width:10px ; */
+            padding: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<nav role="navigation" class="navbar navbar-static-top">
+
+</nav>
+
+<!-- 顶部导航结束 -->
+
+<!-- 侧边栏 -->
+<div id="skin-select">
+
+</div>
+<!--  内容部分 -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+        <!-- CONTENT -->
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <a href="AdminIndex.html"><i class="icon-media-record"></i> </a>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="devider-vertical visible-lg"></div>
+                    <div class="tittle-middle-header">
+
+                        <div class="alert">
+                            <!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+                            <span class="tittle-alert entypo-info-circled"></span> 欢迎回来,&nbsp;
+                            <strong>Dave mattew!</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-2">
+
+                </div>
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+        <!-- BREADCRUMB -->
+        <ul id="breadcrumb">
+            <li>
+                <span class="entypo-home"></span>
+            </li>
+            <li><i class="fa fa-lg fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#" title="题库管理">考试管理</a>
+            </li>
+            <li><i class="fa fa-lg fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="StuGradeSearch.html" title="所有题库">考试查询</a>
+            </li>
+        </ul>
+
+
+        <div class="content-wrap">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <!-- 内容写这里……-->
+
+                    <div class="content-wrap">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="nest" id="FootableClose">
+                                    <div class="title-alt">
+                                        <h6>
+                                            考试查询
+                                        </h6>
+                                    </div>
+
+                                    <div class="body-nest" id="Footable">
+
+                                        <!-- <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller devices look awesome - No matter how many columns of data you may have in them. And it's responsive i think this better than DataTable in some way</p> -->
+
+                                        <table class="table-striped footable-res footable metro-blue"
+                                               data-page-size="6">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    考试编号
+                                                </th>
+                                                <th>
+                                                    试卷名称
+                                                </th>
+                                                <th>
+                                                    试卷介绍
+                                                </th>
+                                                <th>
+                                                    所属学院
+                                                </th>
+
+                                                <th>
+                                                    所属专业
+                                                </th>
+                                                <th>
+                                                    年级
+                                                </th>
+                                                <th>
+                                                    考试日期
+                                                </th>
+                                                <th>
+                                                    时长
+                                                </th>
+                                                <th>
+                                                    总分
+                                                </th>
+                                                <th>
+                                                    试卷类型
+                                                </th>
+                                                <th>
+                                                    出卷人
+                                                </th>
+                                                <th>
+                                                    操作
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tbody">
+                                            <!--							                            <tr th:each="exam:${examManages}">-->
+                                            <!--															<td th:text="${exam.examCode}">110</td>-->
+                                            <!--							                                <td th:text="${exam.source}">计算机网络</td>-->
+                                            <!--							                                <td th:text="${exam.description}">2019年上学期期末考试</td>-->
+                                            <!--							                                <td th:text="${exam.institute}">软件工程</td>-->
+                                            <!--							                                <td th:text="${exam.major}">软件开发与测试</td>-->
+                                            <!--															<td th:text="${exam.grade}">2017</td>-->
+                                            <!--															<td th:text="${exam.examDate}">2019-11-30 8:00-10:00</td>-->
+                                            <!--															<td th:text="${exam.totalTime}">120</td>-->
+                                            <!--															<td th:text="${exam.totalScore}">100</td>-->
+                                            <!--															<td th:text="${exam.type}">期末考试</td>-->
+                                            <!--															<td th:text="${exam.papermaker}">admin</td>-->
+
+
+                                            </tr>
+
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colspan="11">
+                                                    <div class="pagination pagination-centered"></div>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END OF BLANK PAGE -->
+
+            </div>
+
+            <!-- /END OF CONTENT -->
+
+            <!-- model弹出框 -->
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">增加题库</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!--中间内容部分-->
+                            <form id="editForm" class="subscribe-form">
+                                <fieldset>
+                                    <div class="control-group">
+                                        <label class="control-label" for="examCode">考试编号</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="examCode" id="examCode">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="source">试卷名称</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="source" id="source">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="description">试卷介绍</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="description" id="description">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="institute">所属学院</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="institute" id="institute">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="major">所属专业</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="major" id="major">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="grade">年级</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="grade" id="grade">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="examDate">考试日期</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="examDate" id="examDate">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="totalTime">时长</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="totalTime" id="totalTime">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="totalScore">总分</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="totalScore" id="totalScore">
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <div class="control-group">
+                                        <label class="control-label" for="message">Your Message</label>
+                                        <div class="controls">
+                                            <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                                        </div>
+                                    </div> -->
+
+                                </fieldset>
+
+                                <!--中间部分结束-->
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+                                    </button>
+                                    <button type="submit" id="btn_submit" class="btn btn-primary" data-dismiss="modal">
+                                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>保存
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- model弹出框结束-->
+
+            <!-- model删除框st-->
+            <!-- 信息删除确认 -->
+            <div class="modal fade" id="delcfmModel">
+                <div class="modal-dialog">
+                    <div class="modal-content message_align">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">提示信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>您确认要删除吗？</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" id="url"/>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <a id="btn_delExam" class="btn btn-success" data-dismiss="modal">确定</a>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- model删除 end-->
+
+            <!-- FOOTER -->
+            <div class="footer-space"></div>
+            <div id="footer">
+
+            </div>
+            <!-- / END OF FOOTER -->
+
+        </div>
+    </div>
+    <!--  END OF PAPER WRAP -->
+</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$("#footer").load("adminFooter.html");
+
+		$("#skin-select").load("adminSlideBar.html");
+		$("nav").load("adminBar.html");
+
+	});
+
+	$(function () {
+        $('.footable-res').footable();
+    });
+
+    function btn_edit(id) {
+
+        $("#myModalLabel").text("新增");
+        $("#myModal").modal();
+        $.ajax({
+            url: '/examEdit/' + id,
+            type: 'get',
+            success: function (apiResult) {
+                $('input[name=examCode]').val(apiResult.data.examCode);
+                $('input[name=source]').val(apiResult.data.source);
+                $('input[name=description]').val(apiResult.data.description);
+                $('input[name=institute]').val(apiResult.data.institute);
+                $('input[name=major]').val(apiResult.data.major);
+                $('input[name=grade]').val(apiResult.data.grade);
+                $('input[name=examDate]').val(apiResult.data.examDate);
+                $('input[name=totalTime]').val(apiResult.data.totalTime);
+                $('input[name=totalScore]').val(apiResult.data.totalScore);
+            }
+        })
+
+    }
+
+    $('#btn_submit').on('click', function () {
+
+        $.ajax({
+            url: '/exam_saveEdit',
+            type: 'post',
+            data: $('#editForm').serialize(),
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            // contentType:"application/json",
+            success: function (data) {
+                if (data.code == 200) {
+                    alert('修改成功');
+                    window.location.reload();
+                } else alert('修改失败');
+            }
+        })
+    })
+
+    function btn_del(id) {
+        $("#delcfmModel").modal();
+        $('#btn_delExam').on('click', function () {
+            $.ajax({
+                type: 'get',
+                url: '/delExam/' + id,
+                success: function (data) {
+                    if (data.code == 200) {
+                        window.location.reload()
+                    } else alert('删除失败')
+
+                }
+            })
+        })
+
+    }
+
+    // $("#btn_edit").click(function(){
+    // 	$("#myModalLabel").text("新增");
+    // 	$("#myModal").modal();
+    // });
+
+    // $("#btn_del").click(function(){
+    // 	$("#delcfmModel").modal();
+    // });
+    $.ajax({
+        url: '/examSearch',
+        type: 'get',
+        success: function (apiResult) {
+            apiResult.data.forEach(function (value) {
+                $('#tbody').append(
+                    '<tr>' +
+                    '<td>' + value.examCode + '</td>' +
+                    '<td>' + value.source + '</td>' +
+                    '<td>' + value.description + '</td>' +
+                    '<td>' + value.institute + '</td>' +
+                    '<td>' + value.major + '</td>' +
+                    '<td>' + value.grade + '</td>' +
+                    '<td>' + value.examDate + '</td>' +
+                    '<td>' + value.totalTime + '</td>' +
+                    '<td>' + value.totalScore + '</td>' +
+                    '<td>' + value.type + '</td>' +
+                    '<td>' + value.papermaker + '</td>' +
+                    '<td data-value="1">' +
+                    '<a href="javascript:void(0)">' +
+                    '<button class="ladda-button" data-color="blue" data-style="slide-up" data-size="xs" onclick="btn_edit(' + value.examCode + ')" >' +
+                    '<span class="ladda-label">编辑</span><span class="ladda-spinner"></span></button>' +
+                    '<button class="ladda-button" data-color="red" data-style="zoom-in" data-size="xs" onclick="btn_del(' + value.examCode + ')"> ' +
+                    '<span class="ladda-label">删除</span></button>' +
+                    '</a>' +
+                    '</td>' +
+                    '</tr>'
+                )
+            })
+        }
+    })
+</script>
+
+<script type="text/javascript" src="assets/js/preloader.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/Adminapp.js"></script>
+<script type="text/javascript" src="assets/js/load.js"></script>
+<script type="text/javascript" src="assets/js/Adminmain.js"></script>
+
+
+<!-- GAGE -->
+<script type="text/javascript" src="assets/js/toggle_close.js"></script>
+<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<!-- <script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> -->
+<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+</html>

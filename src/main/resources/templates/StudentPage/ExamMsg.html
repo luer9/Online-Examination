@@ -1,0 +1,143 @@
+ 
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Exam</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="assets/img/icon.png">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet"> -->
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/plugins.css">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" href="assets/css/Stu_style.css">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body>
+<!-- 	[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif] -->
+	<!-- Add your site or application content here -->
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- 头 -->
+		<header class="header sticky-header">
+		</header>
+		<!--// 头部结束 -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                  <!--  <h2>我的试卷</h2> -->
+                    <ul>
+                        <li><a href="index.html">Main</a></li>
+                        <li>试卷信息</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- About Us Area -->
+            <div class="cr-section about-us-area section-padding-lg bg-white">
+                <div class="container">
+                    <div class="row" id="paperBegin">
+                        <div class="col-lg-6">
+                            <div class="about-image">
+                                <img src="assets/img/others/about-image1.png" alt="about image">
+                            </div>
+                        </div>
+<!--                        <div class="col-lg-6">-->
+<!--                            <div class="about-content">-->
+<!--                                <h2>试卷名称：<strong>计算机网络</strong></h2>-->
+<!--                                <p>&nbsp;&nbsp;<i class="fa fa-comments-o"></i>&nbsp;考生须知：快乐千万条，学习第一条，平时不努力，考试两行泪</p>-->
+<!--                                <ul>-->
+<!--                                    <li>时间：2019-03-10</li>-->
+<!--                                    <li>限时：120分钟</li>-->
+<!--                                    <li>总分：100分</li>-->
+<!--                                    <li>来自：软件学院</li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--							<a href="solve.html"><input type="submit" class="button" value="开始考试" style="width: 30%;margin-left: 150px;margin-top: 25px;"/></a>-->
+<!--							&lt;!&ndash; <button type="submit" class="button" style="margin-left: 150px;margin-top: 20px;">-->
+<!--								<span>开始考试</span>-->
+<!--							</button> &ndash;&gt;-->
+<!--                        </div>-->
+						
+                    </div>
+                </div>
+            </div>
+            <!--// About Us Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+<script src="assets/js/modernizr-3.6.0.min.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/stu_main.js"></script>
+</body>
+<script>
+	$(function () {
+		$("header").load("stuNav.html");
+		$("footer").load("stuFooter.html");
+	});
+	function begin_exam(id){
+		sessionStorage.setItem("paperId", id);
+		window.location.href='solve.html'
+
+	}
+	$.ajax({
+		url:'/paperBegin/'+sessionStorage.getItem("examCode"),
+		type: 'get',
+		success: function (apiResult) {
+
+			$('#paperBegin').append(
+			'<div class="col-lg-6">'+
+				'<div class="about-content">'+
+				'<h2>试卷名称：<strong>'+apiResult.data.source+'</strong></h2>'+
+				'<p>&nbsp;&nbsp;<i class="fa fa-comments-o"></i>&nbsp;考生须知：'+apiResult.data.tips+'</p>'+
+				'<ul>'+
+				'<li>时间：'+apiResult.data.examDate+'</li>'+
+				'<li>限时：'+apiResult.data.totalTime+'</li>'+
+				'<li>总分：'+apiResult.data.totalScore+'</li>'+
+				'<li>来自：'+apiResult.data.institute+'</li>'+
+				'	</ul>'+
+				'	</div>'+
+				'	<input onclick="begin_exam('+apiResult.data.paperId+')" type="submit" class="button" value="开始考试" style="width: 30%;margin-left: 150px;margin-top: 25px;"/>'+
+			'	</div>'
+			)
+		}
+	})
+</script>
+</html>

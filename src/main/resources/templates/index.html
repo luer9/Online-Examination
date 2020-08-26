@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Examination System</title>
+    <!--<link rel="stylesheet"-->
+    <!--	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">-->
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/font-awesome.min.css}"
+          href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/bootstrap.min.css}" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/demo.css}" href="assets/css/demo.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/templatemo-style.css}" href="assets/css/templatemo-style.css">
+
+    <!-- <script type="text/javascript" src="js/modernizr.custom.86080.js"></script> -->
+    <style>
+        #pp input {
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<ul class="cb-slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<div class="container-fluid">
+    <div class="row cb-slideshow-text-container ">
+        <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
+            <header class="mb-5">
+                <h1 th:text="#{index.space}">
+
+                </h1>
+            </header>
+
+
+            <form id="loginForm" action="/loginError" method="post" class="subscribe-form">
+                <p class="mb-2" id="pp">
+                    <input type="radio" class="author" name="author" th:value="stu"/>[[#{index.sel1}]]
+                    <input type="radio" class="author" name="author" th:value="tea"/>[[#{index.sel2}]]
+                    <input type="radio" class="author" name="author" th:value="admin"/>[[#{index.sel3}]]
+                </p>
+                <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                <div class="row form-section">
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                        <input name="username" type="text" class="form-control_user"
+                               id="contact_user" th:placeholder="#{index.username}" placeholder="请输入账号..." required/>
+                    </div>
+                    <br/>
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                        <input name="password" type="password" class="form-control_pwd"
+                               id="contact_pwd" th:placeholder="#{index.password}" placeholder="请输入密码..." required/>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5">
+                        <button type="submit" class="tm-btn-subscribe" id="btn" th:text="#{index.btn}">登录</button>
+                    </div>
+
+                </div>
+                <a class="btn btn-sm" th:href="@{/index(l='zh_CN')}">中文</a>
+                <a class="btn btn-sm" th:href="@{/index(l='en_US')}">English</a>
+            </form>
+
+        </div>
+    </div>
+    <div class="footer-link">
+
+        <p>
+            Copyright Â© 2019 Henu - Design: <a rel="nofollow" href="#"
+                                                target="_parent">Luer's Team</a>
+        </p>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="assets/js/jquery.min.js" th:src="@{/assets/js/jquery.min.js}"></script>
+<script type="text/javascript" src="assets/js/particles.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script>
+    $('#btn').on("click", function () {
+        var username = document.getElementById("contact_user").value;
+        var pwd = document.getElementById("contact_pwd").value;
+        var author = $('input[name=author]:checked').val();
+		if(author == ''){
+			alert('请选择按钮');
+			return
+		}
+
+        if(username === ''){
+			alert('用户名不能为空');
+			return
+		}
+
+		if(pwd === ''){
+			alert('密码不能为空');
+		return
+		}
+
+
+
+        $.ajax({
+            url: '/loginError',
+            type: 'post',
+            data: $('#loginForm').serialize(),
+
+            success: function (data) {
+                if (data.code === 404) {
+                	alert('郝邦钰个sb按钮选择与用户名类型不符')
+                }
+				if (data.code === 400) {
+					alert('郝邦钰个sb账号密码输错了请重新输入')
+				}
+                if (data.code === 1) {
+                    window.location.href = '/Stu.html'
+                }
+				if (data.code === 2) {
+					window.location.href = '/Tea.html'
+				}
+				if (data.code === 3) {
+					window.location.href = '/Admin.html'
+				}
+
+            }
+        })
+		return false
+    });
+</script>
+</html>

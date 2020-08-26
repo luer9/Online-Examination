@@ -1,0 +1,566 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Exam</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/img/icon.png">
+
+    <!-- Google font (font-family: 'Dosis', sans-serif;) -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet"> -->
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
+
+    <!-- Style Css -->
+    <link rel="stylesheet" href="assets/css/Stu_style.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- solve -->
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/iconfont.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/test.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .hasBeenAnswer {
+            background: #5d9cec;
+            color: #fff;
+        }
+
+        .examType {
+            display: inline-block;
+            /* border: 1px solid red; */
+            font-size: 20px;
+        }
+
+        .rt_typeStyle {
+            display: inline-block;
+            /* border: 1px solid red; */
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        ul textarea {
+            cols: 60;
+            rows: 10;
+            width: 80%;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 	[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif] -->
+<!-- Add your site or application content here -->
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+
+    <!-- 头 -->
+    <header class="header sticky-header">
+
+    </header>
+    <!--// 头部结束 -->
+
+
+    <!-- Page Conttent -->
+    <main class="page-content">
+        <!--nr start-->
+        <div class="test_main">
+            <div class="nr_left">
+                <div class="test">
+                    <form action="" method="post" id="paperForm">
+                        <div class="test_title">
+                            <p class="test_time" id="time">
+                                <i class="fa fa-adjust"></i><b class="alt-1">02:00</b>
+                            </p>
+                            <font><input type="button" value="交卷" id="btn"></font>
+                        </div>
+
+                        <div class="test_content">
+                            <div class="test_content_title">
+                                <span class="examType">选择题</span>
+                                <p>
+                                    <span>共</span><i class="content_lit">20</i><span>题，</span><span>合计</span><i
+                                        class="content_fs">60</i><span>分</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="test_content_nr">
+                            <ul id="multi">
+
+                            </ul>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------>
+                        <div class="test_content">
+                            <div class="test_content_title">
+                                <span class="examType">填空题</span>
+                                <p>
+                                    <span>共</span><i class="content_lit">10</i><span>题，</span><span>合计</span><i
+                                        class="content_fs">30</i><span>分</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="test_content_nr">
+                            <ul ID="fill">
+
+                                <!--												<li id="qu_1_0">-->
+                                <!--													<div class="test_content_nr_tt">-->
+                                <!--														<i>1</i><span>(1分)</span><font>以下属于南方电网员工职业操守中明文规定的有()</font><b class="fa fa-pencil"></b>-->
+                                <!--													</div>-->
+                                <!--			-->
+                                <!--													<div class="test_content_nr_main">-->
+                                <!--														<ul>-->
+                                <!--															<textarea name="ans_1_0" placeholder="请在这里输入答案,如果有多个答案,用空格分开……"></textarea>-->
+                                <!--														</ul>-->
+                                <!--													</div>-->
+                                <!--												</li>-->
+
+
+                            </ul>
+                        </div>
+                        <!-------------------------------------------------------------------------------------------								-->
+                        <div class="test_content">
+                            <div class="test_content_title">
+                                <span class="examType">判断题</span>
+                                <p>
+                                    <span>共</span><i class="content_lit">10</i><span>题，</span><span>合计</span><i
+                                        class="content_fs">30</i><span>分</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="test_content_nr">
+                            <ul id="judge">
+
+                                <!--												<li id="qu_2_0">-->
+                                <!--													<div class="test_content_nr_tt">-->
+                                <!--														<i>1</i><span>(1分)</span><font>以下属于南方电网员工职业操守中明文规定的有()</font><b class="fa fa-pencil"></b>-->
+                                <!--													</div>-->
+                                <!--								-->
+                                <!--													<div class="test_content_nr_main">-->
+                                <!--														<ul>-->
+                                <!--															<li class="option">-->
+                                <!--																<input type="radio" class="radioOrCheck" name="answer1"-->
+                                <!--																		id="2_answer_0_option_1"-->
+                                <!--																	/>-->
+                                <!--																<label for="2_answer_0_option_1">-->
+                                <!--																	A.<p class="ue" style="display: inline;">正确</p>-->
+                                <!--																</label>-->
+                                <!--															</li>-->
+                                <!--																														-->
+                                <!--															<li class="option">-->
+                                <!--																	<input type="radio" class="radioOrCheck" name="answer1"-->
+                                <!--																		id="2_answer_0_option_2"-->
+                                <!--																	/>-->
+                                <!--																<label for="2_answer_0_option_2">-->
+                                <!--																	B.<p class="ue" style="display: inline;">错误</p>-->
+                                <!--																</label>-->
+                                <!--															</li>					-->
+                                <!--														</ul>-->
+                                <!--													</div>-->
+                                <!--												</li>-->
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="nr_right">
+                <div class="nr_rt_main">
+                    <div class="rt_nr1">
+                        <div class="rt_nr1_title">
+                            <h1>
+                                <i class="fa fa-adjust"></i>答题卡
+                            </h1>
+                            <p class="test_time">
+                                <i class="fa fa-adjust"></i><b class="alt-1">02:00</b>
+                            </p>
+                        </div>
+
+                        <div class="rt_content">
+                            <div class="rt_content_tt">
+                                <span class="rt_typeStyle">选择题</span>
+                                <!-- <p> -->
+                                <!-- <span>共</span><i class="content_lit">10</i><span>题</span> -->
+                                <!-- </p> -->
+                            </div>
+                            <div class="rt_content_nr answerSheet">
+                                <ul>
+
+                                    <li><a href="#qu_0_0">1</a></li>
+
+                                    <li><a href="#qu_0_1">2</a></li>
+
+                                    <li><a href="#qu_0_2">3</a></li>
+
+                                    <li><a href="#qu_0_3">4</a></li>
+
+                                    <li><a href="#qu_0_4">5</a></li>
+
+                                    <li><a href="#qu_0_5">6</a></li>
+
+                                    <li><a href="#qu_0_6">7</a></li>
+
+                                    <li><a href="#qu_0_7">8</a></li>
+
+                                    <li><a href="#qu_0_8">9</a></li>
+
+                                    <li><a href="#qu_0_9">10</a></li>
+
+                                    <li><a href="#qu_0_10">11</a></li>
+
+                                    <li><a href="#qu_0_11">12</a></li>
+
+                                    <li><a href="#qu_0_12">13</a></li>
+
+                                    <li><a href="#qu_0_13">14</a></li>
+
+                                    <li><a href="#qu_0_14">15</a></li>
+
+                                    <li><a href="#qu_0_15">16</a></li>
+
+                                    <li><a href="#qu_0_16">17</a></li>
+
+                                    <li><a href="#qu_0_17">18</a></li>
+
+                                    <li><a href="#qu_0_18">19</a></li>
+
+                                    <li><a href="#qu_0_19">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rt_content">
+                            <div class="rt_content_tt">
+                                <span class="rt_typeStyle" style="margin-right: -120px;">填空题</span>
+                                <!-- <p> -->
+                                <!-- <span>共</span><i class="content_lit">10</i><span>题</span> -->
+                                <!-- </p> -->
+                            </div>
+                            <div class="rt_content_nr answerSheet">
+                                <ul>
+
+                                    <li><a href="#qu_1_0">1</a></li>
+
+                                    <li><a href="#qu_1_1">2</a></li>
+
+                                    <li><a href="#qu_1_2">3</a></li>
+
+                                    <li><a href="#qu_1_3">4</a></li>
+
+                                    <li><a href="#qu_1_4">5</a></li>
+
+                                    <li><a href="#qu_1_5">6</a></li>
+
+                                    <li><a href="#qu_1_6">7</a></li>
+
+                                    <li><a href="#qu_1_7">8</a></li>
+
+                                    <li><a href="#qu_1_8">9</a></li>
+
+                                    <li><a href="#qu_1_9">10</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rt_content">
+                            <div class="rt_content_tt">
+                                <span class="rt_typeStyle" style="margin-right: -120px;">判断题</span>
+                                <!-- <p> -->
+                                <!-- <span>共</span><i class="content_lit">10</i><span>题</span> -->
+                                <!-- </p> -->
+                            </div>
+                            <div class="rt_content_nr answerSheet">
+                                <ul>
+
+                                    <li><a href="#qu_2_0">1</a></li>
+
+                                    <li><a href="#qu_2_1">2</a></li>
+
+                                    <li><a href="#qu_2_2">3</a></li>
+
+                                    <li><a href="#qu_2_3">4</a></li>
+
+                                    <li><a href="#qu_2_4">5</a></li>
+
+                                    <li><a href="#qu_2_5">6</a></li>
+
+                                    <li><a href="#qu_2_6">7</a></li>
+
+                                    <li><a href="#qu_2_7">8</a></li>
+
+                                    <li><a href="#qu_2_8">9</a></li>
+
+                                    <li><a href="#qu_2_9">10</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--nr end-->
+
+    </main>
+    <!--// Page Conttent -->
+
+</div>
+<!--// Wrapper -->
+
+<!-- Js Files -->
+<script src="assets/js/modernizr-3.6.0.min.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<!--	<script src="assets/js/stu_main.js"></script>-->
+
+
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/js/jquery.easy-pie-chart.js"></script>
+<!--时间js-->
+<script src="assets/js/jquery.countdown.js"></script>
+<script>
+    $(function () {
+        $("header").load("stuNav.html");
+        // $("footer").load("stuFooter.html");
+    });
+    window.jQuery(function ($) {
+        "use strict";
+
+        $('time').countDown({
+            with_separators: false
+        });
+        $('.alt-1').countDown({
+            css_class: 'countdown-alt-1'
+        });
+        $('.alt-2').countDown({
+            css_class: 'countdown-alt-2'
+        });
+
+    });
+    $(function () {
+        $('li.option label').click(function () {
+            debugger;
+            var examId = $(this).closest('.test_content_nr_main').closest('li').attr('id'); // 得到题目ID
+            var cardLi = $('a[href=#' + examId + ']'); // 根据题目ID找到对应答题卡
+            // 设置已答题
+            if (!cardLi.hasClass('hasBeenAnswer')) {
+                cardLi.addClass('hasBeenAnswer');
+            }
+
+        });
+    });
+    $('#btn').on('click', function () {
+        var multi = [];
+        var x = 0;
+        //选择
+        for (var i = 1; i <= 20; i++) {
+
+            multi[i - 1] = $("input[name='answer" + i + "']:checked").val() + '_' + $("#qu_0_" + x).val();
+            x++
+        }
+        //填空
+        var fill = [];
+        var y = 0;
+        for (var i = 1; i <= 10; i++) {
+            fill[i - 1] = $("#text" + i).val() + '_' + $("#qu_1_" + y).val();
+            y++
+        }
+        //判断
+        var judge = [];
+        var z = 0;
+        for (var i = 1; i <= 10; i++) {
+            judge[i - 1] = $("input[name='judgeAnswer" + i + "']:checked").val() + '_' + $("#qu_2_" + z).val();
+            z++;
+        }
+
+        $.ajax({
+            url: '/countScore',
+            type: 'post',
+            data: {
+                multi: multi,
+                fill: fill,
+                judge: judge
+            },
+            dataType: 'json',
+            success: function (apiResult) {
+                if (apiResult.code === 200) {
+                    var msg = confirm("确定提交试卷？");
+                    if (msg == true) {
+                        window.location = "studentScore.html";
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        })
+    });
+    $.ajax({
+        url: '/paperMulti/' + sessionStorage.getItem("paperId"),
+        type: 'get',
+        success: function (apiResult) {
+            if (apiResult.code === 200) {
+                var i = 0
+                var x = 0
+                apiResult.data.forEach(function (value) {
+                    i++
+                    $('#multi').append(
+                        '<li id="qu_0_' + x + '" value="' + value.questionId + '">' +
+                        '<div class="test_content_nr_tt">' +
+                        '<i>' + i + '</i><span>(' + value.score + '分)</span><font>' + value.question + '</font><b class="fa fa-pencil"></b>' +
+                        '</div>' +
+
+                        '	<div class="test_content_nr_main">' +
+                        '	<ul>' +
+                        '	<li class="option">' +
+
+                        '		<input type="radio" value="A" class="radioOrCheck" name="answer' + i + '"' +
+                        'id="0_answer_' + i + '_option_1"' +
+                        '		/>' +
+
+
+                        '		<label for="0_answer_' + i + '_option_1">' +
+                        '		A.' +
+                        '		<p class="ue" style="display: inline;">' + value.answerA + '</p>' +
+                        '</label>' +
+                        '</li>' +
+
+                        '	<li class="option">' +
+
+                        '		<input type="radio" value="B" class="radioOrCheck" name="answer' + i + '"' +
+                        '		id="0_answer_' + i + '_option_2"' +
+                        '		/>' +
+
+
+                        '		<label for="0_answer_' + i + '_option_2">' +
+                        '		B.' +
+                        '		<p class="ue" style="display: inline;">' + value.answerB + '</p>' +
+                        '		</label>' +
+                        '		</li>' +
+                        '		<li class="option">' +
+
+                        '		<input type="radio" value="C" class="radioOrCheck" name="answer' + i + '"' +
+                        '		id="0_answer_' + i + '_option_3"' +
+                        '		/>' +
+
+
+                        '		<label for="0_answer_' + i + '_option_3">' +
+                        '		C.' +
+                        '		<p class="ue" style="display: inline;">' + value.answerC + '</p>' +
+                        '		</label>' +
+                        '		</li>' +
+
+                        '		<li class="option">' +
+
+                        '		<input type="radio" value="D" class="radioOrCheck" name="answer' + i + '"' +
+                        '		id="0_answer_' + i + '_option_4"' +
+                        '		/>' +
+
+
+                        '		<label for="0_answer_' + i + '_option_4">' +
+                        '		D.' +
+                        '		<p class="ue" style="display: inline;">' + value.answerD + '</p>' +
+                        '		</label>' +
+                        '		</li>' +
+
+                        '		</ul>' +
+                        '		</div>' +
+                        '		</li>'
+                    )
+
+                    x++
+                })
+
+
+            }
+        }
+    })
+    $.ajax({
+        url: '/paperFill/' + sessionStorage.getItem("paperId"),
+        type: 'get',
+        success: function (apiResult) {
+            if (apiResult.code === 200) {
+                var i = 0
+                var x = 0
+                apiResult.data.forEach(function (value) {
+                    i++
+                    $('#fill').append(
+                        '<li id="qu_1_' + x + '" value="' + value.questionId + '">' +
+                        '			<div class="test_content_nr_tt">' +
+                        '			<i>' + i + '</i><span>(' + value.score + '分)</span><font>' + value.question + '</font><b class="fa fa-pencil"></b>' +
+                        '	</div>' +
+
+                        '	<div class="test_content_nr_main">' +
+                        '		<ul>' +
+                        '		<textarea name="ans_1_' + x + '" id="text' + i + '" placeholder="请在这里输入答案,如果有多个答案,用空格分开……"></textarea>' +
+                        '		</ul>' +
+                        '		</div>' +
+                        '		</li>'
+                    )
+                    x++
+
+                })
+            }
+        }
+    })
+    $.ajax({
+        url: '/paperJudge/' + sessionStorage.getItem("paperId"),
+        type: 'get',
+        success: function (apiResult) {
+            if (apiResult.code === 200) {
+                var i = 0
+                var x = 0
+                apiResult.data.forEach(function (value) {
+                    i++
+                    $('#judge').append(
+                        '	<li id="qu_2_' + x + '" value="' + value.questionId + '">' +
+                        '		<div class="test_content_nr_tt">' +
+                        '		<i>' + i + '</i><span>(' + value.score + '分)</span><font>' + value.question + '</font><b class="fa fa-pencil"></b>' +
+                        '</div>' +
+
+                        '<div class="test_content_nr_main">' +
+                        '		<ul>' +
+                        '		<li class="option">' +
+                        '		<input type="radio" class="radioOrCheck" value="T" name="judgeAnswer' + i + '"' +
+                        'id="2_answer_' + x + '_option_1"' +
+                        '		/>' +
+                        '		<label for="2_answer_' + x + '_option_1">' +
+                        '		A.<p class="ue" style="display: inline;">正确</p>' +
+                        '		</label>' +
+                        '		</li>' +
+
+                        '		<li class="option">' +
+                        '		<input type="radio" class="radioOrCheck" value="F" name="judgeAnswer' + i + '"' +
+                        'id="2_answer_' + x + '_option_2"' +
+                        '		/>' +
+                        '		<label for="2_answer_' + x + '_option_2">' +
+                        '		B.<p class="ue" style="display: inline;">错误</p>' +
+                        '		</label>' +
+                        '		</li>					' +
+                        '		</ul>' +
+                        '		</div>' +
+                        '		</li>'
+                    )
+                    x++
+
+                })
+            }
+        }
+    })
+
+</script>
+
+</body>
+
+
+</html>

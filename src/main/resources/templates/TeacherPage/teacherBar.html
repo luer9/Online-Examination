@@ -1,0 +1,159 @@
+<!--
+    描述：顶部部分
+-->
+<div class="container-fluid">
+    <div class="navbar-header">
+        <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="entypo-menu"></span>
+        </button>
+        <button class="navbar-toggle toggle-menu-mobile toggle-left" type="button">
+            <span class="entypo-list-add"></span>
+        </button>
+        <!--
+        描述：顶部左侧：左上角Logo
+    -->
+        <div id="logo-mobile" class="visible-xs">
+            <!--
+            描述：系统名称
+        -->
+            <h1>EXAM<span>v1.0</span></h1>
+        </div>
+
+    </div>
+    <!--
+   描述：顶部中间部分
+-->
+    <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+        <!--
+
+        描述：Help导航
+    -->
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+            </li>
+            <li>
+            </li>
+            <li>
+                <a href="#"><i data-toggle="tooltip" data-placement="bottom" title="Help" style="font-size:20px;" class="icon-help tooltitle"></i></a>
+            </li>
+        </ul>
+        <!--
+        描述：日期
+    -->
+        <div id="nt-title-container" class="navbar-left running-text visible-lg">
+            <ul class="date-top">
+                <li class="entypo-calendar" style="margin-right:5px"></li>
+                <li id="Date"></li>
+            </ul>
+
+            <ul id="digital-clock" class="digital">
+                <li class="entypo-clock" style="margin-right:5px"></li>
+                <li class="hour"></li>
+                <li>:</li>
+                <li class="min"></li>
+                <li>:</li>
+                <li class="sec"></li>
+                <li class="meridiem"></li>
+            </ul>
+            <!--
+
+           描述：顶部字幕
+       -->
+            <ul id="nt-title">
+                <li>
+                    <strong class="icon-heart">&#160;&#160;永远相信美好的事物终会到达</strong>
+                </li>
+                <li>
+                    <strong class="icon-heart">&#160;&#160;未来已来，始于现在！</strong>
+                </li>
+                <li>
+                    <strong class="icon-heart">&#160;&#160;你现在后悔的一切，都是当初放弃的。</strong>
+                </li>
+                <li>
+                    <strong class="icon-heart">&#160;&#160;不思量，自难忘</strong>
+                </li>
+                <li>
+                    <strong class="icon-heart">&#160;&#160;懒惰受到的惩罚不仅仅是自己的失败，还有别人的成功。</strong>
+                </li>
+                <li>
+                    <strong class="icon-heart">&#160;&#160;乾坤未定，你我皆是黑马。</strong>
+                </li>
+                <li>
+                    <strong class="icon-heart">&#160;&#160;Stay Hungry,Stay Foolish.</strong>
+                </li>
+            </ul>
+        </div>
+
+        <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
+            <li>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <img alt="" class="admin-pic img-circle" src="assets/img/az.jpg">Hi, Dave Mattew <b class="caret"></b>
+                </a>
+                <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
+
+                    <li>
+                        <a href="TeachItem.html">
+                            <span class="entypo-vcard"></span>&#160;&#160;帐户设置</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a id="btn_logout">
+                            <span class="entypo-logout"></span>&#160;&#160;退出登录</a>
+                    </li>
+                </ul>
+            </li>
+<!--            <li>-->
+<!--                <a data-toggle="dropdown" class="dropdown-toggle" href="#">-->
+<!--                    <span class="icon-gear"></span>&#160;&#160;设置</a>-->
+<!--                <ul role="menu" class="dropdown-setting dropdown-menu">-->
+
+<!--                    <li class="theme-bg">-->
+<!--                        <div id="button-bg"></div>-->
+<!--                        <div id="button-bg2"></div>-->
+<!--                        <div id="button-bg3"></div>-->
+<!--                        <div id="button-bg5"></div>-->
+<!--                        <div id="button-bg6"></div>-->
+<!--                        <div id="button-bg7"></div>-->
+<!--                        <div id="button-bg8"></div>-->
+<!--                        <div id="button-bg9"></div>-->
+<!--                        <div id="button-bg10"></div>-->
+<!--                        <div id="button-bg11"></div>-->
+<!--                        <div id="button-bg12"></div>-->
+<!--                        <div id="button-bg13"></div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+        </ul>
+
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+<script>
+    $('#btn_logout').on('click', function () {
+        $.ajax({
+            url: '/admin_logout',
+            type: 'post',
+            success: function (data) {
+                if (data.code === 200)
+                    window.location.href = '/logout.html';
+            }
+
+        })
+    })
+</script>
+<!-- MAIN EFFECT -->
+<script type="text/javascript" src="assets/js/preloader.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/teacherapp.js"></script>
+<script type="text/javascript" src="assets/js/load.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+<!-- /MAIN EFFECT-->
+<!-- GAGE-->
+<script type="text/javascript" src="assets/js/toggle_close.js"></script>
+<script src="assets/js/footable/js/footable.js?v=2-0-1" tyspe="text/javascript"></script>
+<!-- <script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> -->
+<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>

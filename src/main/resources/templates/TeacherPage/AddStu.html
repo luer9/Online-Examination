@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--描述：网页标题-->
+    <title>EXAM V1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--
+    描述：style
+-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/teacher_style.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <!-- 有关 表格-->
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css">
+
+    <style>
+        #custom_content {
+            /* border: 1px solid black; */
+            width: 60%;
+            background: #FAF5F2;
+            border-left: 6px solid #FDC8C8;
+            /* border-width:10px ; */
+            padding: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: normal !important;
+        }
+
+        .control-group {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<nav role="navigation" class="navbar navbar-static-top">
+
+</nav>
+
+<!-- 顶部导航结束 -->
+
+<!-- 侧边栏 -->
+<div id="skin-select">
+
+</div>
+<!-- 侧边栏结束 -->
+
+<!--  内容部分 -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+        <!-- CONTENT -->
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <a href="TeacherIndex.html"><i class="icon-media-record"></i> </a>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="devider-vertical visible-lg"></div>
+                    <div class="tittle-middle-header">
+
+                        <div class="alert">
+                            <!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+                            <span class="tittle-alert entypo-info-circled"></span> 欢迎回来,&nbsp;
+                            <strong>Dave mattew!</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-2">
+
+                </div>
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+        <!-- BREADCRUMB -->
+        <ul id="breadcrumb">
+            <li>
+                <span class="entypo-home"></span>
+            </li>
+            <li><i class="fa fa-lg fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#" title="学生管理">学生管理</a>
+            </li>
+            <li><i class="fa fa-lg fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="AddStu.html" title="添加学生">添加学生</a>
+            </li>
+
+        </ul>
+
+
+        <div class="content-wrap">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <!-- BLANK PAGE-->
+                    <!-- ！！！！！！！哈哈哈哈哈这里写内容！！！！！！！ -->
+                    <div class="nest" id="validationClose">
+                        <div class="title-alt">
+                            <h6>添加学生</h6>
+                        </div>
+
+                        <div class="body-nest" id="validation">
+                            <div class="form_center">
+
+                                <form action="contact" id="contact-form" class="form-horizontal">
+                                    <fieldset>
+                                        <div class="control-group">
+                                            <label class="control-label" for="ID">学号</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="ID" id="ID"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="name">姓名</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="name" id="name"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="gender">性别</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="gender" id="gender"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="institute">学院</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="institute" id="institute"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="Class">年级</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="Class" id="Class"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="classes">班级</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="classes" id="classes"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="phone">电话号码</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="phone" id="phone"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="IDnumber">身份证号</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="IDnumber" id="IDnumber"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="email">邮箱</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="email" id="email"
+                                                       style="width:50%">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="password">密码</label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="password" id="password">
+                                            </div>
+                                        </div>
+                                        <!-- <div class="control-group">
+                                            <label class="control-label" for="message">Your Message</label>
+                                            <div class="controls">
+                                                <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-actions" style="margin:20px 0 0 0;">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="reset" class="btn">Cancel</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END OF BLANK PAGE -->
+
+                </div>
+
+                <!-- /END OF CONTENT -->
+
+                <!-- FOOTER -->
+                <div class="footer-space"></div>
+                <div id="footer">
+
+
+                </div>
+                <!-- / END OF FOOTER -->
+
+            </div>
+        </div>
+        <!--  END OF PAPER WRAP -->
+    </div>
+</div>
+</body>
+
+<script>
+    $(function () {
+        $("#footer").load("teacherFooter.html");
+
+        $("#skin-select").load("teacherSlideBar.html");
+        $("nav").load("teacherBar.html");
+
+    });
+    $(document).ready(function () {
+        //Validation
+        $('#contact-form').validate({
+            rules: {
+                ID: {
+                    maxlength: 10,
+                    required: true
+                },
+                name: {
+                    minlength: 2,
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    digits: true
+                },
+                IDnumber: {
+                    required: true,
+                    digits: true
+                },
+                password: {
+                    required: true,
+                    minlength: 6
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.control-group').removeClass('success').addClass('error');
+            },
+            success: function (element) {
+                element
+                    .text('OK!').addClass('valid')
+                    .closest('.control-group').removeClass('error').addClass('success');
+            }
+        });
+
+        // MASKED INPUT
+
+        $("#date").mask("99/99/9999", {
+            completed: function () {
+                alert("Your birthday was: " + this.val());
+            }
+        });
+        $("#phone").mask("999-9999-999");
+
+        $("#IDnumber").mask("999999-99999999-9999");
+        $("#money").mask("99.999.9999", {
+            placeholder: "*"
+        });
+        $("#ssn").mask("99--AAA--9999", {
+            placeholder: "*"
+        });
+
+
+        //COLOR PICKER
+        window.prettyPrint && prettyPrint();
+
+        // Code for those demos
+        var _createColorpickers = function () {
+            $('#cp1').colorpicker({
+                format: 'hex'
+            });
+            $('#cp2').colorpicker();
+            $('#cp3').colorpicker();
+            var bodyStyle = $('body')[0].style;
+            $('#cp4').colorpicker().on('changeColor', function (ev) {
+                bodyStyle.backgroundColor = ev.color.toHex();
+            });
+        }
+
+        _createColorpickers();
+
+        $('.bscp-destroy').click(function (e) {
+            e.preventDefault();
+            $('.bscp').colorpicker('destroy');
+        });
+
+        $('.bscp-create').click(function (e) {
+            e.preventDefault();
+            _createColorpickers();
+        });
+
+    });
+</script>
+<!--&lt;!&ndash; MAIN EFFECT &ndash;&gt;-->
+<!--<script type="text/javascript" src="assets/js/preloader.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bootstrap.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/teacherapp.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/load.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/main.js"></script>-->
+
+<!--&lt;!&ndash; /MAIN EFFECT &ndash;&gt;-->
+<!--&lt;!&ndash; GAGE &ndash;&gt;-->
+<!--<script type="text/javascript" src="assets/js/toggle_close.js"></script>-->
+<!--<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>-->
+<!--&lt;!&ndash; <script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> &ndash;&gt;-->
+<!--<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>-->
+<!--<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>-->
+<!--<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>-->
+
+</html>

@@ -1,0 +1,270 @@
+ 
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Exam</title>
+<meta name="description" content="">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Favicon -->
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="../img/icon.png">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet"> -->
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/plugins.css">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" href="../css/Stu_style.css">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="../css/custom.css">
+
+<style>
+.about-image img {
+	transform: scale(0.5, 0.5);
+	border-radius: 50%;
+	align-content: center;
+	margin-top: -80px;
+}
+</style>
+</head>
+
+<body>
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- 头 -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<h2>EXAM v1.0</h2>
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span> <span></span> <span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+								<li><a href="index.html">我的试卷</a></li>
+								<li><a href="scoreTable.html">我的分数</a></li>
+								<li><a href="portfolio.html">个人信息</a></li>
+								 <li><a href="../index.html">退出登录</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			<!-- 	<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo"> <img
+							src="img/logo/logo-dark.png" alt="mobile logo">
+						</a>
+					</div>
+				</div> -->
+			</div>
+		</header>
+		<!--// 头部结束 -->
+
+		<!-- Breadcrumb Area -->
+		<div class="breadcrumb-area bg-grey">
+			<div class="container">
+				<div class="cr-breadcrumb">
+					<!-- <h2>EXAM</h2> -->
+					<ul>
+						<li><a href="index.html">Main</a></li>
+						<li>个人信息</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+			<!-- About Us Area -->
+			<div class="cr-section about-us-area section-padding-lg bg-white">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="about-image">
+								<img src="../img/stuicon.png" alt="about image">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="about-content">
+								<h2>
+									姓名：<strong>abc</strong>
+								</h2>
+								<p>
+									&nbsp;&nbsp;<i class="fa fa-comments-o"></i>&nbsp;&nbsp;“真正能让你走远的
+									都是自律积极勤奋”
+								</p>
+								<ul>
+									<li>学号：11111</li>
+									<li>性别：男</li>
+									<li>年级：2017</li>
+									<li>学院：软件学院</li>
+									<li>专业：软件工程</li>
+									<li>班级：软件工程二班</li>
+								</ul>
+							</div>
+							<input type="button" class="button" value="修改密码" id="pwd_edit"
+								style="width: 30%; margin-left: 150px; margin-top: 25px;" />
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!--// About Us Area -->
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+					<li>Henu<br>Software
+					</li>
+					<li><a href="tel://13027507869">+13027507869</a></li>
+					<li><a href="mailto://13027507869@163.com">13027507869@163.com</a></li>
+					<li>Copyright &copy; by luer's team</li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="pwdModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!--头部-->
+					修改密码
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<span class="input-group-addon">旧密码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="text" class="form-control" placeholder="请输入旧密码"
+							name="oldpwd"> <span class='input-group-addon hidden'
+							id='oldspan' hidden><span class="label label-danger"
+							hidden>密码错误</span></span>
+
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">新密码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="text" class="form-control" name="newpwd"> <span
+							class='input-group-addon hidden' id='newspan' hidden><span
+							class="label label-danger" hidden>新密码不能为空</span></span>
+
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">确认密码：</span> <input type="text"
+							class="form-control" name="repwd"> <span
+							class='input-group-addon hidden' id='respan' hidden><span
+							class="label label-danger" hidden>两次输入的密码不一致</span></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						关闭</button>
+					<button type="button" class="btn btn-primary" id="btnPwd">
+						提交更改</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+
+	<!-- Js Files -->
+	<script src="../js/modernizr-3.6.0.min.js"></script>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/stu_main.js"></script>
+
+	<script>
+		//注册新增按钮的事件
+		$("#pwd_edit").click(function () {
+			  // $("#myModalLabel").text("新增");
+		   $('#pwdModal').modal();
+		});
+			
+			
+	   $(function() {
+			$("#btnPwd").click(function(){
+				$('#oldspan').addClass('hidden');
+				$('#newspan').addClass('hidden');
+				$('#respan').addClass('hidden');
+				var oldpwd = $('input[name="oldpwd"]').val();
+				var newpwd = $('input[name="newpwd"]').val();
+				var repwd = $('input[name="repwd"]').val();
+				if(oldpwd != '123456')
+					{
+					$('#oldspan').removeClass('hidden');
+					return;
+				}
+				if(newpwd.length <1)
+					{
+					$('#newspan').removeClass('hidden');
+					return;
+				}
+				if(newpwd != repwd)
+				{
+					$('#respan').removeClass('hidden');
+					return;
+				}
+				
+			   $.ajax({
+				url:'${pageContext.request.contextPath }/ResearcherServlet',
+				type:'POST', //GET
+				data:{
+					newpwd:newpwd,//想要传输过去的数据 key：value，另一个页面通过 key接收value的值
+				},
+				timeout:5000,    //超时时间
+				dataType:'text',    //返回的数据格式：json/xml/html/script/jsonp/text
+				success:function(data){//data是成功后，接收的返回值
+					if (data == 1) {
+						alert('修改密码成功');
+					} else {
+						//不存在
+						alert('修改密码失败');
+					}	
+					window.console.log('成功回调函数');
+				},
+				error : function() {
+					window.console.log('失败回调函数');
+				}
+			});
+				
+				$('input[name="oldpwd"]').val('');
+				$('input[name="newpwd"]').val('');
+				$('input[name="repwd"]').val('');
+				$(function () { $('#pwdModal').modal('hide')});
+			});
+		});  
+	</script>
+
+</body>
+
+
+
+</html>

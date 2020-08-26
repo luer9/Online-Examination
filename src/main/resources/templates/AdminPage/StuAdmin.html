@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--描述：网页标题-->
+    <title>EXAM V1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--
+    描述：style
+-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/Adminstyle.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <!-- 有关 表格-->
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <style>
+        #custom_content {
+            /* border: 1px solid black; */
+            width: 60%;
+            background: #FAF5F2;
+            border-left: 6px solid #FDC8C8;
+            /* border-width:10px ; */
+            padding: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<nav role="navigation" class="navbar navbar-static-top">
+
+</nav>
+
+<!-- 顶部导航结束 -->
+
+<!-- 侧边栏 -->
+<div id="skin-select">
+
+</div>
+<!--  内容部分 -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+        <!-- CONTENT -->
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <a href="AdminIndex.html"><i class="icon-media-record"></i> </a>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="devider-vertical visible-lg"></div>
+                    <div class="tittle-middle-header">
+
+                        <div class="alert">
+                            <!-- <button type="button" class="close" data-dismiss="alert">×</button> -->
+                            <span class="tittle-alert entypo-info-circled"></span>
+                            欢迎回来,&nbsp; <strong>Dave mattew!</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+        <!-- BREADCRUMB -->
+        <ul id="breadcrumb">
+            <li><span class="entypo-home"></span></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="#" title="学生管理">学生管理</a></li>
+            <li><i class="fa fa-lg fa-angle-right"></i></li>
+            <li><a href="StuGradeSearch.html" title="学生管理">学生管理</a></li>
+        </ul>
+
+
+        <div class="content-wrap">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <!-- 内容写这里……-->
+
+                    <div class="content-wrap">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="nest" id="FootableClose">
+                                    <div class="title-alt">
+                                        <h6>学生管理</h6>
+                                    </div>
+
+                                    <div class="title-alt1">
+                                        学号: <input name="sid" type="text" placeholder="学号" class="form-control"/>
+                                        &nbsp;
+                                        <button type="button" class="btn btn-info" id="find_stu">查询</button>
+                                    </div>
+
+                                    <form id="add_student" action="/add_stu" method="post" class="subscribe-form"
+                                          enctype='multipart/form-data'>
+                                        <button type="button" class="btn btn-success" style="margin:15px;"
+                                                id="chos_template" title="获取的学生信息模板文件" data-toggle="modal"
+                                                data-target="#choseTemplate">
+                                            <span class="entypo-upload"></span>&nbsp;&nbsp;模板获取
+                                        </button>
+                                        <span id="filepath"></span>
+                                        <input type="file" id="btn_file" style="display:none" name="file_name">
+                                        <button type="button" class="btn btn-success" style="margin:15px;"
+                                                id="btn_file1">
+                                            <span class="entypo-upload"></span>&nbsp;&nbsp;选择文件
+                                        </button>
+                                        <button type="button" class="btn btn-success" style="margin:15px;"
+                                                id="btn_file2">
+                                            <span class="entypo-upload">&nbsp;&nbsp;提交</span>
+                                        </button>
+                                    </form>
+                                    <div class="body-nest" id="Footable">
+
+                                        <!-- <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller devices look awesome - No matter how many columns of data you may have in them. And it's responsive i think this better than DataTable in some way</p> -->
+
+                                        <table class="table-striped footable-res footable metro-blue"
+                                               data-page-size="6">
+                                            <thead>
+                                            <tr>
+                                                <th>学号</th>
+                                                <th>姓名</th>
+                                                <th>学院</th>
+                                                <th>专业</th>
+                                                <th>年级</th>
+                                                <th>班级</th>
+                                                <th>性别</th>
+                                                <th>联系方式</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tbody">
+
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colspan="8">
+                                                    <div class="pagination pagination-centered"></div>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END OF BLANK PAGE -->
+
+            </div>
+
+            <!-- /END OF CONTENT -->
+
+
+			<form method="get" action="/downloadWhpModel/4">
+				<button type="submit" id="getStu" style="display:none"></button>
+			</form>
+
+
+            <!-- model弹出框 -->
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">编辑</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!--中间内容部分-->
+                            <form id="editForm">
+                                <fieldset>
+                                    <div class="control-group">
+                                        <label class="control-label" for="studentId">学号</label>
+                                        <div class="controls">
+                                            <input readonly="readonly" type="text" class="form-control" name="studentId"
+                                                   id="studentId"
+                                                   style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div lass="control-group">
+                                        <label class="control-label" for="studentName">姓名</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="studentName" id="studentName"
+                                                   style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sex">性别</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="sex"
+                                                   id="sex" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="institute">学院</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="institute"
+                                                   id="institute" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="grade">年级</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="grade"
+                                                   id="grade" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="clazz">班级</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="clazz"
+                                                   id="clazz" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="tel">电话号码</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="tel"
+                                                   id="tel" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="cardId">身份证号</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="cardId"
+                                                   id="cardId" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="email">邮箱</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="email"
+                                                   id="email" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="pwd">密码</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="pwd"
+                                                   id="pwd" style="width: 50%">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="control-group">
+                                            <label class="control-label" for="message">Your Message</label>
+                                            <div class="controls">
+                                                <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                                            </div>
+                                        </div> -->
+
+                                </fieldset>
+                            </form>
+                            <!--中间部分结束-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default"
+                                    data-dismiss="modal">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+                            </button>
+                            <button type="button" id="btn_submit" class="btn btn-primary"
+                                    data-dismiss="modal">
+									<span class="glyphicon glyphicon-floppy-disk"
+                                          aria-hidden="true"></span>保存
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- model弹出框结束-->
+
+            <!-- model删除框st-->
+            <!-- 信息删除确认 -->
+            <div class="modal fade" id="delcfmModel">
+                <div class="modal-dialog">
+                    <div class="modal-content message_align">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title">提示信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>您确认要删除吗？</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" id="url"/>
+                            <button type="button" class="btn btn-default"
+                                    data-dismiss="modal">取消
+                            </button>
+                            <a id="btn_deltea" class="btn btn-success"
+                               data-dismiss="modal">确定</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- model删除 end-->
+
+            <!-- FOOTER -->
+            <div class="footer-space"></div>
+            <div id="footer">
+
+            </div>
+            <!-- / END OF FOOTER -->
+
+        </div>
+    </div>
+    <!--  END OF PAPER WRAP -->
+</body>
+<script type="text/javascript">
+    $(function () {
+        $("#footer").load("adminFooter.html");
+
+        $("#skin-select").load("adminSlideBar.html");
+        $("nav").load("adminBar.html");
+
+    });
+
+    $("#chos_template").on("click", function () {
+		$('#getStu').click();
+	});
+
+    $('#find_stu').on('click', function () {
+        var id = $('input[name=sid]').val()
+        $.ajax({
+            url: '/find_stu/' + id,
+            type: 'get',
+            success: function (apiResult) {
+                var value = apiResult.data
+                $('#tbody').html('')
+                $('#tbody').append(
+                    '<tr>' +
+                    '<td>' + value.studentId + '</td>' +
+                    '<td>' + value.studentName + '</td>' +
+                    '<td>' + value.institute + '</td>' +
+                    '<td>' + value.major + '</td>' +
+                    '<td>' + value.grade + '</td>' +
+                    '<td>' + value.clazz + '</td>' +
+                    '<td>' + value.sex + '</td>' +
+                    '<td>' + value.tel + '</td>' +
+                    '<td data-value="1"><a href="#"> ' +
+                    '<button class="ladda-button" data-color="blue" ' +
+                    'data-style="slide-up" data-size="xs"' +
+                    'onclick="btn_edit(' + value.studentId + ')"> ' +
+                    '<span class="ladda-label">编辑</span><span ' +
+                    'class="ladda-spinner"></span> ' +
+                    '</button>' +
+                    '<button class="ladda-button" data-color="red" ' +
+                    'data-style="zoom-in" data-size="xs" onclick="btn_del(' + value.studentId + ' ) "> ' +
+                    '<span class="ladda-label">删除</span> ' +
+                    '</button> ' +
+                    '</a></td>' +
+                    '</tr>'
+                )
+            }
+        })
+    })
+
+    // Wxy update end!!!!!!!!!!!
+
+
+    $(function () {
+        $('.footable-res').footable();
+    });
+
+    function btn_edit(id) {
+        $("#myModalLabel").text("编辑");
+        $("#myModal").modal();
+        $.ajax({
+            url: '/stuEdit/' + id,
+            type: 'get',
+            success: function (apiResult) {
+                $('input[name=studentId]').val(apiResult.data.studentId);
+                $('input[name=studentName]').val(apiResult.data.studentName);
+                $('input[name=sex]').val(apiResult.data.sex);
+                $('input[name=institute]').val(apiResult.data.institute);
+                $('input[name=grade]').val(apiResult.data.grade);
+                $('input[name=clazz]').val(apiResult.data.clazz);
+                $('input[name=tel]').val(apiResult.data.tel);
+                $('input[name=cardId]').val(apiResult.data.cardId);
+                $('input[name=email]').val(apiResult.data.email);
+                $('input[name=pwd]').val(apiResult.data.pwd);
+            }
+        })
+    }
+
+    $('#btn_submit').on('click', function () {
+
+        $.ajax({
+            url: '/student_saveEdit',
+            type: 'post',
+            data: $('#editForm').serialize(),
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            // contentType:"application/json",
+            success: function (data) {
+                if (data.code == 200) {
+                    alert('修改成功');
+                    window.location.reload();
+                } else alert('修改失败');
+            }
+        })
+    })
+
+    function btn_del(id) {
+        $("#delcfmModel").modal();
+        $('#btn_deltea').on('click', function () {
+            $.ajax({
+                type: 'get',
+                url: '/del_stu/' + id,
+                success: function (data) {
+                    if (data.code == 200) {
+                        window.location.reload()
+                    } else alert('删除失败')
+                }
+            })
+        })
+    }
+
+    $('#btn_file1').on('click', function () {
+        $('#btn_file').click();
+        var file = document.getElementById("btn_file").files;
+        alert("已选择文件" + file[0].name);
+
+    })
+
+    $('#btn_file2').on("click", function () {
+        var data = new FormData()
+        data.append('student_file', $('#btn_file')[0].files[0])
+        console.log(data)
+        $.ajax({
+            url: '/add_stu',
+            type: 'post',
+            cache: false,
+            processData: false,
+            contentType: false,
+            data: data,
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 404) {
+                    alert('上传失败')
+                }
+                if (data.code == 200) {
+                    alert('上传成功')
+                }
+
+            }
+        })
+        return false
+    });
+    $.ajax({
+        url: '/stu_search',
+        type: 'get',
+        success: function (apiResult) {
+            apiResult.data.forEach(function (value) {
+                $('#tbody').append(
+                    '<tr>' +
+                    '<td>' + value.studentId + '</td>' +
+                    '<td>' + value.studentName + '</td>' +
+                    '<td>' + value.institute + '</td>' +
+                    '<td>' + value.major + '</td>' +
+                    '<td>' + value.grade + '</td>' +
+                    '<td>' + value.clazz + '</td>' +
+                    '<td>' + value.sex + '</td>' +
+                    '<td>' + value.tel + '</td>' +
+                    '<td data-value="1"><a href="#"> ' +
+                    '<button class="ladda-button" data-color="blue" ' +
+                    'data-style="slide-up" data-size="xs"' +
+                    'onclick="btn_edit(' + value.studentId + ')"> ' +
+                    '<span class="ladda-label">编辑</span><span ' +
+                    'class="ladda-spinner"></span> ' +
+                    '</button>' +
+                    '<button class="ladda-button" data-color="red" ' +
+                    'data-style="zoom-in" data-size="xs" onclick="btn_del(' + value.studentId + ' ) "> ' +
+                    '<span class="ladda-label">删除</span> ' +
+                    '</button> ' +
+                    '</a></td>' +
+                    '</tr>'
+                )
+            })
+        }
+    })
+
+
+</script>
+<script type="text/javascript" src="assets/js/preloader.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/Adminapp.js"></script>
+<script type="text/javascript" src="assets/js/load.js"></script>
+<script type="text/javascript" src="assets/js/Adminmain.js"></script>
+
+
+<!-- GAGE -->
+<script type="text/javascript" src="assets/js/toggle_close.js"></script>
+<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<!-- <script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script> -->
+<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+</html>

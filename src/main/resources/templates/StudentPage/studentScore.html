@@ -1,0 +1,261 @@
+ 
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Exam</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="assets/img/icon.png">
+	
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet"> -->
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/plugins.css">
+	
+	<!-- Style Css -->
+	<link rel="stylesheet" href="assets/css/Stu_style.css">
+	
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+	<style>
+		.look{
+			/* border: 1px solid saddlebrown; */
+			width: 90%;
+			margin: 40px auto;
+			border-bottom:2px solid #DBDBDB;
+			text-align: left;
+			color: #36B2FE;
+			padding: 10px;
+		}
+		.score{
+			width: 80%;
+			/* border: 1px solid red; */
+			margin: 40px auto;
+			text-align: center;
+			margin-top: 100px;
+		}
+		.time{
+			list-style: none;
+		}
+		.total{
+			/* border: 1px solid #DBDBDB; */
+			box-shadow: 0px 0px 15px 1px  gray;
+			padding: 20px;
+			margin: 40px;
+			margin-bottom: 100px;
+		}
+		
+		.show{
+			/* border: 1px solid saddlebrown; */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 80%;
+			margin: 0 auto;
+			
+		}
+		.number{
+			  border: 6px solid #36AAFD;
+			  transform: rotate(0deg);
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  flex-direction: column;
+			  margin: 0 auto;
+			  width: 240px;
+			  height: 240px;
+			  border-radius: 50%;
+			  margin-top: 80px;
+			  margin-bottom: 30px;
+			  transition: all 1s ease;
+			}
+		.number span:nth-of-type(1){
+			font-size: 40px;
+			font-weight: 800;
+		}
+		.number span:nth-of-type(2){
+			font-size: 20px;
+		}
+		.img1{
+				margin-top: 30px;
+				/* opacity: 0; */
+				/* transform: translateX(0px);  */
+				transition: all 0.6s ease;
+		}
+		.img2 {
+				margin-top: 30px;
+				margin-left: 30px;
+				/* opacity: 0; */
+				/* transform: translateX(0px);  */
+				transition: all 0.6s ease;
+			 }
+		} 
+		.time {
+			  padding: 0px 70px;
+			  margin-bottom: 50px;
+		}
+		.time li{
+			display: flex;
+			justify-content: space-around;
+			padding: 10px;
+			margin: 20px 0px;
+		}
+		.time li:nth-of-type(1){
+			background-color: #fcf8e3;
+		}
+		.time li:nth-of-type(2){
+			background-color: #e9f5e9;
+		}
+	</style>
+</head>
+
+<body>
+<!-- 	[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif] -->
+	<!-- Add your site or application content here -->
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- 头 -->
+		<header class="header sticky-header">
+
+		</header>
+		<!--// 头部结束 -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <!-- <h2>EXAM</h2> -->
+                    <ul>
+                        <li><a href="index.html">Main</a></li>
+                        <li>本科成绩</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+			
+			 <div class="score">
+				<div class="title" id="subject">
+
+				</div>
+				<div class="total">
+				  <div class="look">
+					本次考试成绩
+				  </div>
+				  <div class="show">
+						<div class="img1">
+						  <!-- <img src="img/cry1.gif" alt="哭了"/> -->
+						  <img src="assets/img/good1.jpg" alt="过了">
+						</div>
+						<div class="number" id="score">
+
+						</div>
+						<div class="img2">
+						  <img src="assets/img/good2.gif" alt="过了" />
+						</div>
+				  </div>
+				  <ul class="time" id="time">
+
+				  </ul>
+				</div>
+			</div>
+			
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+<script src="assets/js/modernizr-3.6.0.min.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/stu_main.js"></script>
+</body>
+<script>
+	$(function () {
+		$("header").load("stuNav.html");
+		$("footer").load("stuFooter.html");
+	});
+	$.ajax({
+		url: '/paperEnd',
+		type: 'get',
+		success: function (apiResult) {
+			// if(apiResult.code===200){
+			// var day1 = new Date();
+			// alert(day1.setTime(day1.getTime()-24*60*60*1000))
+				$('#subject').append(
+				'<h4 class="name">'+apiResult.data.subject+'</h4>'
+
+				)
+				$('#score').append(
+				'<span>'+apiResult.data.etScore+'</span>'+
+				'<span>分数</span>'
+				)
+			var date = new Date();
+			var seperator1 = "-";
+			var seperator2 = ":";
+			var month = date.getMonth() + 1<10? "0"+(date.getMonth() + 1):date.getMonth() + 1;
+			var strDate = date.getDate()<10? "0" + date.getDate():date.getDate();
+			var currentdate = date.getFullYear() + seperator1  + month  + seperator1  + strDate
+					+ " "  + date.getHours()  + seperator2  + date.getMinutes()
+					+ seperator2 + date.getSeconds();
+
+			$('#time').append(
+
+			'<li class="end"><span>结束时间</span> <span>'+currentdate+'</span></li>'
+			)
+			// }
+		}
+	})
+	$.ajax({
+		url: '/paperE',
+		type: 'get',
+		success: function (apiResult) {
+			// if (apiResult.code===200){
+			$('#subject').append(
+					'<span class="description">(总分：'+apiResult.data.totalScore+'分,限时：'+apiResult.data.totalTime+'分钟)</span>'
+
+			)
+			// }
+		}
+
+	})
+	$.ajax({
+		url: '/paperEn',
+		type: 'get',
+		success: function (apiResult) {
+			// if (apiResult.code===200){
+			$('#subject').append(
+					'<p class="description">学生：<strong>'+apiResult.data.studentName+'</strong></p>'
+			)
+			// }
+		}
+	})
+
+</script>
+
+
+
+</html>
